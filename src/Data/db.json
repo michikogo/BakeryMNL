@@ -1,0 +1,39 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "imageURL": "/item1.jpg",
+      "title": "Dark Chocolate Peanut Butter Mini Tarts",
+      "desc": "Dark Chocolate Peanut Butter Mini Tarts with Mixed Berry Jam, Chocolate Crust, and Torched Swiss Meringue Buttercream",
+      "price": "P 250 per Tarte"
+    },
+    {
+      "id": 2,
+      "imageURL": "/item2.jpg",
+      "title": "Choc Hazelnut Cheesecake",
+      "desc": "Choc Hazelnut Cheesecake",
+      "price": "P 200 per Tarte"
+    },
+    {
+      "id": 3,
+      "imageURL": "/item3.jpg",
+      "title": "Coconut and Dark Chocolate Tart with Ginger Caramel (Gluten Free)",
+      "desc": "You won't be able to resist this gluten-free, superbly rich coconut and dark chocolate tart with ginger caramel! Perfect for your next dinner party!",
+      "price": "P 250 per Tarte"
+    },
+    {
+      "id": 4,
+      "imageURL": "/item4.jpg",
+      "title": "Blackberry Chocolate Tart",
+      "desc": "This chocolate tart is not only vegan and gluten free, but this decadet chocolate tart is balanced with tart blackberries!",
+      "price": "P 350 per slice"
+    },
+    {
+      "id": 5,
+      "imageURL": "/item5.jpg",
+      "title": "Chocolate Mousse",
+      "desc": "This creamy, silky, and airy mousse. You can dress it up, as I have done above, and add other pastry components to recreate a petit gateau (a small layered mousse cake) such as the ones you see in the Paris patisseries. Or, you can keep it simple with a spoonful of soft sweetened whipped cream on top. Either way, you will be comforted in knowing that Paris is only a spoonful away.",
+      "price": "P 350 per slice"
+    }
+  ]
+}
