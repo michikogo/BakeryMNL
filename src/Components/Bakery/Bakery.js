@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import "./index.css";
-import { Container, Row, Col, Card, CardDeck } from "react-bootstrap";
+import { Container, Card, CardDeck } from "react-bootstrap";
 
 const Bakery = () => {
   const [products, setProducts] = useState(null);
