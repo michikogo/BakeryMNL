@@ -76,6 +76,76 @@
       "title": "Cream Buns",
       "desc": "Who remembers these cream buns from their childhood? Serious throwback vibes!",
       "price": "P250"
+    },
+    {
+      "id": 12,
+      "imageURL": "/item12.jpg",
+      "title": "Mini Chocolate Coffee Layer Cheesecakes",
+      "desc": "MOCHA CHEESECAKES 😍🍫☕️ Vanilla layer, choc layer & a choc coffee layer... Hmm what more could you possibly want in a dessert?! 🤤",
+      "price": "P250"
+    },
+    {
+      "id": 13,
+      "imageURL": "/item13.jpg",
+      "title": "Oreo Cookies and Cream Cheesecake",
+      "desc": "Enjoy childhood bliss with every Oreo filled cheesecake bite",
+      "price": "P250"
+    },
+    {
+      "id": 14,
+      "imageURL": "/item14.jpg",
+      "title": "Raw Vegan Coffee Cupcakes",
+      "desc": "Want a healthy dessert without turning on the oven? These raw vegan coffee cupcakes are just the thing for you! With a crunchy base and a ridiculously creamy filling, they’re chock-full of coffee, and quite possibly one of the prettiest desserts ever.",
+      "price": "P250"
+    },
+    {
+      "id": 15,
+      "imageURL": "/item15.jpg",
+      "title": "Chocolate Mosse",
+      "desc": "Chocolate Mosse",
+      "price": "P250"
+    },
+    {
+      "id": 16,
+      "imageURL": "/item16.jpg",
+      "title": "Lemon Coconut Mousse",
+      "desc": "A tangy lemon mousse with hints of coconut on a sweet biscuit base",
+      "price": "P250"
+    },
+    {
+      "id": 17,
+      "imageURL": "/item17.jpg",
+      "title": "Fingers Vanille Noisette Caramel",
+      "desc": "Fingers Vanille Noisette Caramel",
+      "price": "P250"
+    },
+    {
+      "id": 18,
+      "imageURL": "/item18.jpg",
+      "title": "Chocolate Tiramisu",
+      "desc": "If you like regular tiramisu, you’ll love chocolate tiramisu! This twist on the familiar Italian favorite calls for hot chocolate instead of espresso, and adds several layers of chocolate ganache for a deep, rich chocolate taste.      ",
+      "price": "P250"
+    },
+    {
+      "id": 19,
+      "imageURL": "/item19.jpg",
+      "title": "Devils Food Cake",
+      "desc": "We use this signature recipe for our sinfully delicious devils food cake layers, sheet cakes and cupcakes.",
+      "price": "P250"
+    },
+    {
+      "id": 20,
+      "imageURL": "/item20.jpg",
+      "title": "Strawberry Shortcakes",
+      "desc": "Classic shortbread rounds, all tender crumbles of buttery biscuit are filled with sweetened strawberry slices and a giant mound of thick whipped cream.",
+      "price": "P250"
+    },
+    {
+      "id": 21,
+      "imageURL": "/item21.jpg",
+      "title": "S’mores Cupcakes",
+      "desc": " They are Chocolate Cupcakes, filled with Milk Chocolate Ganache, topped with a Milk Chocolate Buttercream, coated in graham cracker crumbs, and topped with Marshmallow Frosting.",
+      "price": "P250"
     }
   ]
 }
