@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
 
 import "./index.css";
-import "antd/dist/antd.css";
-import { Card, Col, Row } from "antd";
+import { Container, Row, Col, Card, CardDeck } from "react-bootstrap";
 
 const Bakery = () => {
-  const { Meta } = Card;
   const [products, setProducts] = useState(null);
 
   useEffect(() => {
@@ -21,38 +19,44 @@ const Bakery = () => {
   }, []);
 
   return (
-    <div className="site-card-wrapper">
-      <h1>Bakery Page</h1>
-      <Row style={{ placeContent: "center" }}>
+    <Container fluid>
+      <h1 style={{ textAlign: "center", marginBottom: "25px" }}>Bakery</h1>
+      <CardDeck style={{ placeContent: "center", textAlign: "-webkit-center" }}>
         {products &&
           products.map((product) => (
-            <Col sm={5}>
-              <Card
-                hoverable
+            // <Row>
+            //   <Col mds={3}>
+            <Card
+              key={product.id}
+              style={{
+                minWidth: "15rem",
+                maxWidth: "15rem",
+                marginBottom: "25px",
+              }}
+            >
+              <Card.Img
+                variant="top"
+                src={require("../../Assets/Image" + product.imageURL).default}
                 style={{
-                  width: 240,
-                  borderRadius: "8px",
-                  marginBottom: "20px",
+                  height: "252.4px",
+                  objectFit: "cover",
                 }}
-                cover={
-                  <img
-                    src={
-                      require("../../Assets/Image" + product.imageURL).default
-                    }
-                    style={{
-                      width: "240px",
-                      height: "240px",
-                      objectFit: "cover",
-                    }}
-                  />
-                }
-              >
-                <Meta title={product.title} description={product.price} />
-              </Card>
-            </Col>
+              />
+              <Card.Body>
+                <Card.Title>{product.title}</Card.Title>
+                <Card.Text style={{ color: "coral" }}>
+                  {product.price}
+                </Card.Text>
+              </Card.Body>
+              <Card.Footer>
+                <small className="text-muted">Order Now!</small>
+              </Card.Footer>
+            </Card>
+            //   </Col>
+            // </Row>
           ))}
-      </Row>
-    </div>
+      </CardDeck>
+    </Container>
   );
 };
 

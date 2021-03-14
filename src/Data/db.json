@@ -34,6 +34,48 @@
       "title": "Chocolate Mousse",
       "desc": "This creamy, silky, and airy mousse. You can dress it up, as I have done above, and add other pastry components to recreate a petit gateau (a small layered mousse cake) such as the ones you see in the Paris patisseries. Or, you can keep it simple with a spoonful of soft sweetened whipped cream on top. Either way, you will be comforted in knowing that Paris is only a spoonful away.",
       "price": "P 350 per slice"
+    },
+    {
+      "id": 6,
+      "imageURL": "/item6.jpg",
+      "title": "Triple Chocolate Mousse Balls",
+      "desc": "No matter how you serve chocolate mousse, you can't go wrong. These miniature bites are great for a quick snack or for a small dessert after a good meal.",
+      "price": "P 150 per ball"
+    },
+    {
+      "id": 7,
+      "imageURL": "/item7.jpg",
+      "title": "VANILLA RASPBERRY CAKE",
+      "desc": "Delicious fruit cake. Refreshing and luring from the very first sight of it.",
+      "price": "P 180 per Tarte"
+    },
+    {
+      "id": 8,
+      "imageURL": "/item8.jpg",
+      "title": "Sponge Kisses",
+      "desc": "Small round discs of delicate sponge cake with jam and fresh cream in the centre and dusting of icing sugar.",
+      "price": "P 250"
+    },
+    {
+      "id": 9,
+      "imageURL": "/item9.jpg",
+      "title": "Raspberry Buttercream Mille Feuille",
+      "desc": "A twist on a classic French dessert using regular buttercream frosting, raspberry jam and frozen puff pastry. These beautiful pastries are not nearly as difficult to prepare as you might think.",
+      "price": "P 250"
+    },
+    {
+      "id": 10,
+      "imageURL": "/item10.jpg",
+      "title": "Blueberry Puff Pastry Tarts with Lemon Cream",
+      "desc": "A light and flavorful company worthy dessert that’s easily made ahead and assembled just before serving.",
+      "price": "P250"
+    },
+    {
+      "id": 11,
+      "imageURL": "/item11.jpg",
+      "title": "Cream Buns",
+      "desc": "Who remembers these cream buns from their childhood? Serious throwback vibes!",
+      "price": "P250"
     }
   ]
 }

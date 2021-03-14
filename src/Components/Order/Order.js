@@ -1,6 +1,3 @@
-import "antd/dist/antd.css";
-import { Card } from "antd";
-
 const Order = () => {
   return (
     <div>
