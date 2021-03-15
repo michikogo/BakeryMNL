@@ -1,7 +1,8 @@
-import "../index.css";
-import { Form, Col, Button, Modal } from "react-bootstrap";
 import { useState } from "react";
 import { useHistory } from "react-router";
+
+import "../index.css";
+import { Form, Col, Button, Modal } from "react-bootstrap";
 
 const PickUp = () => {
   const [firstName, setFirstName] = useState("");
