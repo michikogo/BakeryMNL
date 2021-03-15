@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import "./index.css";
-import { Container, Card, CardDeck } from "react-bootstrap";
+import { Container, Card, CardDeck, Spinner } from "react-bootstrap";
 
 const Bakery = () => {
   const [products, setProducts] = useState(null);
@@ -30,14 +30,14 @@ const Bakery = () => {
 
   return (
     <Container fluid>
-      <h1 style={{ textAlign: "center", marginBottom: "25px" }}>Bakery</h1>
+      <h3 style={{ textAlign: "center", marginBottom: "25px" }}>Bakery</h3>
       {error && (
-        <h5 style={{ textAlign: "center", marginBottom: "25px" }}>{error}</h5>
+        <h6 style={{ textAlign: "center", marginBottom: "25px" }}>{error}</h6>
       )}
       {isPending && (
-        <h5 style={{ textAlign: "center", marginBottom: "25px" }}>
-          Loading...
-        </h5>
+        <h6 style={{ textAlign: "center", marginBottom: "25px" }}>
+          <Spinner animation="border" role="status" />
+        </h6>
       )}
       <CardDeck style={{ placeContent: "center", textAlign: "-webkit-center" }}>
         {products &&
@@ -61,7 +61,7 @@ const Bakery = () => {
               <Card.Body>
                 <Card.Title>{product.title}</Card.Title>
                 <Card.Text style={{ color: "coral" }}>
-                  {product.price}
+                  Price: ₱{product.price}
                 </Card.Text>
               </Card.Body>
               <Card.Footer>

@@ -10,14 +10,27 @@
   border-radius: 0% !important;
   border-top-left-radius: 10px !important;
   border-top-right-radius: 10px !important;
+  background-color: #c0bcb5 !important;
+  border-color: white !important;
+  color: black !important;
+}
+.order-initial-mode-btn:focus {
+  box-shadow: none !important;
 }
 .order-mode-btn {
-  background-color: #17a2b8 !important;
-  color: #fff !important;
+  color: black !important;
+  background-color: #eef0f2 !important;
+  border-top-color: #c0bcb5 !important;
+  border-right-color: #c0bcb5 !important;
+  border-left-color: #c0bcb5 !important;
+  border-bottom-color: #eef0f2 !important;
 }
 .order-content {
-  background-color: #fff;
+  background-color: #eef0f2;
   padding: 30px 50px !important;
+  border: 1px solid #c0bcb5;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .order-textAlign {
   text-align: center;
@@ -44,6 +57,12 @@
   vertical-align: middle;
   font-weight: bold;
 }
+.order-table-textAlign {
+  text-align: center;
+}
+.table {
+  margin-bottom: 3rem !important;
+}
 /*********** PICKUP ***********/
 .title-padding-bottom {
   padding-bottom: 15px;
@@ -52,5 +71,8 @@
 .details-padding-top {
   padding-top: 15px;
 }
-
+.btn-primary {
+  background-color: #846075 !important;
+  border-color: #846075 !important;
+}
 /*********** DELIVER ***********/

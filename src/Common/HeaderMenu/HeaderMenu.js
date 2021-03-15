@@ -1,13 +1,12 @@
-import { Navbar, Nav, NavItem } from "react-bootstrap";
-
-import { logo } from "../../Assets";
-
 import { Link } from "react-router-dom";
+import { Navbar, Nav, NavItem } from "react-bootstrap";
+import "./index.css";
+import { logo } from "../../Assets";
 
 const HeaderMenu = () => {
   return (
     <div>
-      <Navbar style={{ backgroundColor: "#67697C" }}>
+      <Navbar style={{ backgroundColor: "#4A6C6F" }}>
         <Nav
           style={{
             width: "100%",
@@ -19,25 +18,25 @@ const HeaderMenu = () => {
           }}
         >
           <NavItem>
-            <Link to="/" style={{ color: "white" }}>
+            <Link to="/" className="header-route">
               Home
             </Link>
           </NavItem>
           <NavItem>
-            <Link to="/about" style={{ color: "white", marginLeft: "25px" }}>
+            <Link to="/about" className="header-route">
               About
             </Link>
           </NavItem>
-          <Navbar.Brand>
+          <Navbar.Brand style={{ marginRight: "0px" }}>
             <img alt="Cannot Fetch Logo" src={logo} />
           </Navbar.Brand>
           <NavItem>
-            <Link to="/bakery" style={{ color: "white", marginRight: "25px" }}>
+            <Link to="/bakery" className="header-route">
               Bakery
             </Link>
           </NavItem>
           <NavItem>
-            <Link to="/order" style={{ color: "white" }}>
+            <Link to="/order" className="header-route">
               Order
             </Link>
           </NavItem>

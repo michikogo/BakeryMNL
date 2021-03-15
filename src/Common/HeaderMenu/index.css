@@ -1,0 +1,9 @@
+.header-route {
+  color: white;
+  padding: 0px 20px;
+}
+.header-route:hover {
+  color: #c0bcb5;
+  padding: 0px 20px;
+  text-decoration: none;
+}

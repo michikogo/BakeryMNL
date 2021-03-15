@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router";
 import "../index.css";
-import { Form, Col, Button, Modal } from "react-bootstrap";
+import { Form, Col, Button, Modal, Row } from "react-bootstrap";
 
 const Deliver = () => {
   const [firstName, setFirstName] = useState("");
@@ -101,20 +101,26 @@ const Deliver = () => {
       </Form.Row>
 
       <h5 className="details-padding-top">Delivery Address</h5>
-      <Form.Row>
-        <Form.Group as={Col}>
+
+      <Form.Group as={Row}>
+        <Form.Label column sm="2">
+          Address
+        </Form.Label>
+        <Col sm="10">
           <Form.Control
             type="text"
-            placeholder="Address"
             require
             value={address}
             onChange={(e) => setAddress(e.target.value)}
           />
-        </Form.Group>
-      </Form.Row>
+        </Col>
+      </Form.Group>
 
-      <Form.Row>
-        <Form.Group as={Col}>
+      <Form.Group as={Row}>
+        <Form.Label column sm="2">
+          City
+        </Form.Label>
+        <Col sm="10">
           <Form.Control
             as="select"
             require
@@ -133,20 +139,21 @@ const Deliver = () => {
             <option>Makati</option>
             <option>Pasay</option>
           </Form.Control>
-        </Form.Group>
-      </Form.Row>
+        </Col>
+      </Form.Group>
 
-      <Form.Row>
-        <Form.Group as={Col}>
+      <Form.Group as={Row}>
+        <Form.Label column sm="2">
+          Zip Code
+        </Form.Label>
+        <Col sm="10">
           <Form.Control
             type="number"
-            placeholder="Zip Code"
-            require
             value={zipCode}
             onChange={(e) => setZipCode(e.target.value)}
           />
-        </Form.Group>
-      </Form.Row>
+        </Col>
+      </Form.Group>
 
       <h5 className="details-padding-top">Add a note to your order</h5>
       <Form.Row>

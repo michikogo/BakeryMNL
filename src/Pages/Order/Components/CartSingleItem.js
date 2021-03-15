@@ -23,7 +23,7 @@ const CartSingleItem = ({ data, computeTotal }) => {
         <div className="order-fontWeight">{data.title}</div>
       </td>
       <td className="order-verticalAlign">
-        <div>P{data.price}</div>
+        <div>₱{data.price}</div>
       </td>
       <td className="order-verticalAlign order-quantity">
         {/* <Row>
@@ -36,7 +36,7 @@ const CartSingleItem = ({ data, computeTotal }) => {
         <div>{data.quantity}</div>
       </td>
       <td className="order-verticalAlign">
-        <div>P{totalSingle}</div>
+        <div>₱{totalSingle}</div>
       </td>
     </tr>
   );

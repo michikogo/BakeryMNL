@@ -19,8 +19,8 @@ function App() {
         style={{
           padding: 24,
           paddingTop: 50,
+          paddingBottom: 50,
           minHeight: "80vh",
-          backgroundColor: "#969696",
         }}
       >
         <Switch>

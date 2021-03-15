@@ -107,7 +107,7 @@ const PickUp = () => {
 
         <Form.Row>
           <Form.Group as={Col}>
-            <Form.Label>Where do you like to pickup your order?</Form.Label>
+            <h5>Where do you like to pickup your order?</h5>
             <Form.Control
               as="select"
               required
@@ -129,7 +129,7 @@ const PickUp = () => {
           </Form.Group>
         </Form.Row>
 
-        <h4 className="details-padding-top">Select Date and Time</h4>
+        <h5 className="details-padding-top">Select Date and Time</h5>
         <Form.Row>
           <Form.Group as={Col}>
             <Form.Control

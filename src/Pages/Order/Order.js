@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import "./index.css";
-import { Container, Button, Row, Col } from "react-bootstrap";
+import { Container, Button, Row, Col, Image } from "react-bootstrap";
 import Deliver from "./Components/Deliver";
 import PickUp from "./Components/PickUp";
 import CartList from "./Components/CartList";
+import { deliver, pickup } from "../../Assets";
 
 const Order = () => {
   const [isPickUp, setIsPickUp] = useState(true);
@@ -50,7 +51,7 @@ const Order = () => {
         <Col className="order-col">
           <Button
             block
-            variant="outline-info"
+            variant="secondary"
             onClick={modePickUp}
             // Conditional Styling
             className={
@@ -59,13 +60,14 @@ const Order = () => {
                 : "order-initial-mode-btn"
             }
           >
+            <img src={pickup} width="25" style={{ marginRight: "5px" }} />
             Pick Up
           </Button>
         </Col>
         <Col className="order-col">
           <Button
             block
-            variant="outline-info"
+            variant="secondary"
             onClick={modeDeliver}
             // Conditional Styling
             className={
@@ -74,7 +76,8 @@ const Order = () => {
                 : "order-initial-mode-btn"
             }
           >
-            Delivery
+            <img src={deliver} width="25" style={{ marginRight: "5px" }} />
+            Deliver
           </Button>
         </Col>
       </Row>

@@ -18,9 +18,9 @@ const Cart = ({ cart }) => {
         <tr>
           <th>Product</th>
           <th></th>
-          <th>Price</th>
-          <th>Quantity</th>
-          <th>Total</th>
+          <th className="order-table-textAlign">Price</th>
+          <th className="order-table-textAlign">Quantity</th>
+          <th className="order-table-textAlign">Total</th>
         </tr>
       </thead>
       <tbody>
@@ -46,7 +46,7 @@ const Cart = ({ cart }) => {
           <td colSpan="4" className="order-total">
             Total
           </td>
-          <td className="order-verticalAlign">P{total}</td>
+          <td className="order-verticalAlign">₱{total}</td>
         </tr>
       </tbody>
     </Table>
