@@ -1,23 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import "./index.css";
-import {
-  Container,
-  Table,
-  Button,
-  Row,
-  Col,
-  Image,
-  Form,
-} from "react-bootstrap";
-import { item1, item2 } from "../../Assets/index";
+import { Container, Button, Row, Col } from "react-bootstrap";
 import Deliver from "./Deliver";
 import PickUp from "./PickUp";
+import Cart from "./Cart";
 
 const Order = () => {
   const [isPickUp, setIsPickUp] = useState(true);
   const [isDeliver, setIsDeliver] = useState(false);
+  const [cart, setCart] = useState(null);
 
   const modePickUp = () => {
     setIsPickUp(true);
@@ -29,73 +22,34 @@ const Order = () => {
     setIsDeliver(true);
   };
 
+  // const computeSingles = () = > {
+
+  // }
+
+  useEffect(() => {
+    fetch("http://localhost:8000/cart")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setCart(data);
+      });
+  }, []);
+
   return (
     <Container fluid="md">
+      {/* TITLE BAR */}
       <Row>
         <Col className="order-title">
           <h3>Your Cart</h3>
           <Link to="/bakery">Continue Shopping</Link>
         </Col>
       </Row>
-      <Row>
-        <Table responsive>
-          <thead>
-            <tr>
-              <th>Product</th>
-              <th></th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style={{ textAlign: "center" }}>
-              <td style={{ verticalAlign: "middle" }}>
-                <Image
-                  src={item1}
-                  style={{
-                    height: "150px",
-                    width: "150px",
-                    objectFit: "cover",
-                  }}
-                />
-              </td>
-              <td style={{ verticalAlign: "middle" }}>
-                <div style={{ fontWeight: "bold" }}>
-                  Dark Chocolate Peanut Butter Mini Tarts
-                </div>
-              </td>
-              <td style={{ verticalAlign: "middle" }}>
-                <div>P250</div>
-              </td>
-              <td style={{ verticalAlign: "middle", width: "15vh" }}>
-                <Row>
-                  <Col>
-                    <Form.Control type="text" placeholder="1" />
-                  </Col>
-                </Row>
-              </td>
-              <td style={{ verticalAlign: "middle" }}>
-                <div>P250</div>
-              </td>
-            </tr>
 
-            <tr style={{ textAlign: "center" }}>
-              <td
-                colSpan="4"
-                style={{
-                  verticalAlign: "middle",
-                  textAlignLast: "right",
-                }}
-              >
-                Total
-              </td>
-              <td style={{ verticalAlign: "middle" }}>P250</td>
-            </tr>
-          </tbody>
-        </Table>
-      </Row>
+      {/* TABLE */}
+      <Row>{cart && <Cart cart={cart} />}</Row>
 
+      {/* PICKUP OR DELIVERY */}
       <Row style={{ placeContent: "center" }}>
         <Col className="order-col">
           <Button
@@ -128,6 +82,8 @@ const Order = () => {
           </Button>
         </Col>
       </Row>
+
+      {/* SHOW CONTENT OF PICKUP OR DELIVERY */}
       <Row>
         <Col className="order-content">
           {/* if pickup is true */}
