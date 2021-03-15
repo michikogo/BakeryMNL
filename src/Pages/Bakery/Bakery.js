@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import "./index.css";
 import { Container, Card, CardDeck, Spinner } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Bakery = () => {
   const [products, setProducts] = useState(null);
@@ -60,14 +61,17 @@ const Bakery = () => {
                   objectFit: "cover",
                 }}
               />
+
               <Card.Body>
                 <Card.Title>{product.title}</Card.Title>
-                <Card.Text style={{ color: "coral" }}>
-                  Price: ₱{product.price}
-                </Card.Text>
               </Card.Body>
+              <Card.Footer style={{ color: "#ED474A" }}>
+                Price: ₱{product.price}
+              </Card.Footer>
               <Card.Footer>
-                <small className="text-muted">Order Now!</small>
+                <Link to={`/bakery/${product.id}`}>
+                  <large className="text-muted">Order Now</large>
+                </Link>
               </Card.Footer>
             </Card>
           ))}
