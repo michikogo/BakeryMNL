@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 import "./index.css";
 import { Container, Button, Row, Col } from "react-bootstrap";
-import Deliver from "./Deliver";
-import PickUp from "./PickUp";
-import Cart from "./Cart";
+import Deliver from "./Components/Deliver";
+import PickUp from "./Components/PickUp";
+import Cart from "./Components/Cart";
 
 const Order = () => {
   const [isPickUp, setIsPickUp] = useState(true);

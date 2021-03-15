@@ -1,4 +1,4 @@
-import "./index.css";
+import "../index.css";
 import { Table, Row, Col, Image, Form } from "react-bootstrap";
 
 const Cart = ({ cart }) => {
@@ -20,7 +20,7 @@ const Cart = ({ cart }) => {
             <tr className="order-textAlign">
               <td className="order-verticalAlign">
                 <Image
-                  src={require("../../Assets/Image" + data.imageURL).default}
+                  src={require("../../../Assets/Image" + data.imageURL).default}
                   className="order-image"
                 />
               </td>

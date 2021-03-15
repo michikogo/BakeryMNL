@@ -2,14 +2,14 @@ import "./App.css";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import HeaderMenu from "./Components/HeaderMenu/HeaderMenu";
-import FooterMenu from "./Components/FooterMenu/FooterMenu";
-import Home from "./Components/Home/Home";
-import About from "./Components/About/About";
-import Bakery from "./Components/Bakery/Bakery";
-import Order from "./Components/Order/Order";
-import Product from "./Components/Product/Product";
-import PageNotFound from "./Components/PageNotFound/PageNotFound";
+import HeaderMenu from "./Common/HeaderMenu/HeaderMenu";
+import FooterMenu from "./Common/FooterMenu/FooterMenu";
+import Home from "./Pages/Home/Home";
+import About from "./Pages/About/About";
+import Bakery from "./Pages/Bakery/Bakery";
+import Order from "./Pages/Order/Order";
+import Product from "./Pages/Product/Product";
+import PageNotFound from "./Common/PageNotFound/PageNotFound";
 
 function App() {
   return (
