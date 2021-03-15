@@ -15,7 +15,14 @@ function App() {
   return (
     <Router>
       <HeaderMenu />
-      <div style={{ padding: 24, minHeight: "80vh", backgroundColor: "grey" }}>
+      <div
+        style={{
+          padding: 24,
+          paddingTop: 50,
+          minHeight: "80vh",
+          backgroundColor: "#969696",
+        }}
+      >
         <Switch>
           <Route exact path="/">
             <Home />
