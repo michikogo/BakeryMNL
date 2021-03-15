@@ -19,7 +19,31 @@
   background-color: #fff;
   padding: 30px 50px !important;
 }
-
+.order-textAlign {
+  text-align: center;
+}
+.order-verticalAlign {
+  vertical-align: middle !important;
+}
+.order-image {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+}
+.order-quantity {
+  width: 15vh;
+}
+.order-fontWeight {
+  font-weight: bold;
+}
+.order-total {
+  vertical-align: middle;
+  text-align-last: right;
+}
+.order-empty {
+  vertical-align: middle;
+  font-weight: bold;
+}
 /*********** PICKUP ***********/
 .title-padding-bottom {
   padding-bottom: 15px;
