@@ -6,7 +6,7 @@ const Deliver = () => {
     <Form>
       <h3 className="title-padding-bottom">ORDER FOR DELIVERY</h3>
 
-      <h5>Contact Details</h5>
+      <h5 className="details-padding-top">Contact Details</h5>
       <Form.Row>
         <Form.Group as={Col}>
           <Form.Control type="text" placeholder="First Name" />
@@ -25,7 +25,7 @@ const Deliver = () => {
         </Form.Group>
       </Form.Row>
 
-      <h5>Delivery Address</h5>
+      <h5 className="details-padding-top">Delivery Address</h5>
       <Form.Row>
         <Form.Group as={Col}>
           <Form.Control type="text" placeholder="Address" />
@@ -61,7 +61,7 @@ const Deliver = () => {
         </Form.Group>
       </Form.Row>
 
-      <h5>Add a note to your order</h5>
+      <h5 className="details-padding-top">Add a note to your order</h5>
       <Form.Row>
         <Form.Group as={Col}>
           <Form.Control as="textarea" rows="3" />
