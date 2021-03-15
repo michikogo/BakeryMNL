@@ -11,7 +11,7 @@ const Cart = ({ cart }) => {
     amount = amount + price;
     setTotal(amount);
   };
-
+  console.log(cart);
   return (
     <Table responsive>
       <thead>
@@ -25,7 +25,7 @@ const Cart = ({ cart }) => {
       </thead>
       <tbody>
         {/* GET CONTENTS FROM DB */}
-        {cart !== 0 ? (
+        {cart.length !== 0 ? (
           cart.map((data) => (
             // Reference the function to child
             <CartSingleItem
