@@ -163,5 +163,29 @@
       "price": "250",
       "quantity": 3
     }
+  ],
+  "pickup": [
+    {
+      "id": 1,
+      "name": "LastName, FirstName",
+      "mobileNumber": 0977,
+      "email": "@.com",
+      "city": "Manila",
+      "date": "Monday",
+      "time": "11:00",
+      "note": "asda"
+    }
+  ],
+  "delivery": [
+    {
+      "id": 1,
+      "name": "LastName, FirstName",
+      "mobileNumber": 0977,
+      "email": "@.com",
+      "address": "123",
+      "city": "Manila",
+      "zipCode": 110,
+      "note": "asda"
+    }
   ]
 }
