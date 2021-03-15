@@ -4,8 +4,9 @@ import { Form, Col, Button } from "react-bootstrap";
 const PickUp = () => {
   return (
     <Form>
-      <h1 className="title-padding-bottom">ORDER FOR PICKUP</h1>
-      <h4>Contact Details</h4>
+      <h3 className="title-padding-bottom">ORDER FOR PICKUP</h3>
+
+      <h5 className="details-padding-top">Contact Details</h5>
       <Form.Row>
         <Form.Group as={Col}>
           <Form.Control type="text" placeholder="First Name" />
@@ -43,7 +44,7 @@ const PickUp = () => {
         </Form.Group>
       </Form.Row>
 
-      <h4>Select Date and Time</h4>
+      <h4 className="details-padding-top">Select Date and Time</h4>
       <Form.Row>
         <Form.Group as={Col}>
           <Form.Control as="select" placeholder="Date">
@@ -67,10 +68,10 @@ const PickUp = () => {
         </Form.Group>
       </Form.Row>
 
+      <h5 className="details-padding-top">Add a note to your order</h5>
       <Form.Row>
         <Form.Group as={Col}>
-          <Form.Label>Add a note to your order</Form.Label>
-          <Form.Control type="textarea" col="3" />
+          <Form.Control as="textarea" rows="3" />
         </Form.Group>
       </Form.Row>
 
