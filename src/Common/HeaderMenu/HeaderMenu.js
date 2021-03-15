@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const HeaderMenu = () => {
   return (
     <div>
-      <Navbar bg="dark" variant="dark">
+      <Navbar style={{ backgroundColor: "#67697C" }}>
         <Nav
           style={{
             width: "100%",
