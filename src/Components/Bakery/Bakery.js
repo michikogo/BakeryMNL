@@ -5,27 +5,43 @@ import { Container, Card, CardDeck } from "react-bootstrap";
 
 const Bakery = () => {
   const [products, setProducts] = useState(null);
+  const [isPending, setIsPending] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetch("http://localhost:8000/products")
       .then((res) => {
+        if (!res.ok) {
+          throw Error("Cannot Fetch Data");
+        }
         return res.json();
       })
       .then((products) => {
-        console.log("Data:", products);
         setProducts(products);
-        console.log(products);
+        setIsPending(false);
+        setError(null);
+      })
+      .catch((err) => {
+        setIsPending(false);
+        setError(err.message);
+        console.log(err);
       });
   }, []);
 
   return (
     <Container fluid>
       <h1 style={{ textAlign: "center", marginBottom: "25px" }}>Bakery</h1>
+      {error && (
+        <h5 style={{ textAlign: "center", marginBottom: "25px" }}>{error}</h5>
+      )}
+      {isPending && (
+        <h5 style={{ textAlign: "center", marginBottom: "25px" }}>
+          Loading...
+        </h5>
+      )}
       <CardDeck style={{ placeContent: "center", textAlign: "-webkit-center" }}>
         {products &&
           products.map((product) => (
-            // <Row>
-            //   <Col mds={3}>
             <Card
               key={product.id}
               style={{
@@ -52,8 +68,6 @@ const Bakery = () => {
                 <small className="text-muted">Order Now!</small>
               </Card.Footer>
             </Card>
-            //   </Col>
-            // </Row>
           ))}
       </CardDeck>
     </Container>
