@@ -30,7 +30,9 @@ const Bakery = () => {
 
   return (
     <Container fluid>
-      <h3 style={{ textAlign: "center", marginBottom: "25px" }}>Bakery</h3>
+      <h3 style={{ textAlign: "center", marginBottom: "45px" }}>
+        Whats Baking?
+      </h3>
       {error && (
         <h6 style={{ textAlign: "center", marginBottom: "25px" }}>{error}</h6>
       )}
