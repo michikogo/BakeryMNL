@@ -1,90 +1,75 @@
+import "./index.css";
 import { Form, Col, Button } from "react-bootstrap";
 
 const Deliver = () => {
   return (
     <Form>
-      <h1>Deliver</h1>
+      <h3 className="title-padding-bottom">ORDER FOR DELIVERY</h3>
+
+      <h5>Contact Details</h5>
       <Form.Row>
         <Form.Group as={Col}>
-          <Form.Label>First Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter First Name" />
+          <Form.Control type="text" placeholder="First Name" />
         </Form.Group>
-
         <Form.Group as={Col}>
-          <Form.Label>Last Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter Last Name" />
+          <Form.Control type="text" placeholder="Last Name" />
         </Form.Group>
       </Form.Row>
 
       <Form.Row>
-        <Col>
-          <Form.Group>
-            <Form.Label>Phone Number</Form.Label>
-            <Form.Control type="number" placeholder="Place Phone Number" />
-          </Form.Group>
-        </Col>
-        <Col>
-          <Form.Group>
-            <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="Place Email" />
-          </Form.Group>
-        </Col>
+        <Form.Group as={Col}>
+          <Form.Control type="number" placeholder="Mobile Number" />
+        </Form.Group>
+        <Form.Group as={Col}>
+          <Form.Control type="email" placeholder="Email (Optional)" />
+        </Form.Group>
+      </Form.Row>
+
+      <h5>Delivery Address</h5>
+      <Form.Row>
+        <Form.Group as={Col}>
+          <Form.Control type="text" placeholder="Address" />
+        </Form.Group>
       </Form.Row>
 
       <Form.Row>
-        <Col xs={3}>
-          <Form.Group>
-            <Form.Label>Mode of Claim</Form.Label>
-            <Form.Control as="select">
-              <option>Store Pickup</option>
-              <option>Delivery</option>
-            </Form.Control>
-          </Form.Group>
-        </Col>
+        <Form.Group as={Col}>
+          <Form.Control type="text" placeholder="City/Municipality" />
+        </Form.Group>
       </Form.Row>
 
       <Form.Row>
-        <Col>
-          <Form.Group>
-            <Form.Label>Branch</Form.Label>
-            <Form.Control as="select">
-              <option>America</option>
-              <option>Japan</option>
-              <option>Philippines</option>
-              <option>Singapore</option>
-              <option>Hong Kong</option>
-              <option>Italy</option>
-              <option>France</option>
-              <option>Ireland</option>
-            </Form.Control>
-          </Form.Group>
-        </Col>
+        <Form.Group as={Col}>
+          <Form.Control as="select" placeholder="Region">
+            <option>Manila</option>
+            <option>Mandaluyong</option>
+            <option>San Juan</option>
+            <option>Valenzuela</option>
+            <option>Quezon City</option>
+            <option>Marikina</option>
+            <option>Pasig</option>
+            <option>Taguig</option>
+            <option>Makati</option>
+            <option>Pasay</option>
+          </Form.Control>
+        </Form.Group>
       </Form.Row>
 
       <Form.Row>
-        <Col>
-          <Form.Group>
-            <Form.Label>Delivery</Form.Label>
-            <Form.Control as="select">
-              <option>America</option>
-              <option>Japan</option>
-              <option>Philippines</option>
-              <option>Singapore</option>
-              <option>Hong Kong</option>
-              <option>Italy</option>
-              <option>France</option>
-              <option>Ireland</option>
-            </Form.Control>
-          </Form.Group>
-        </Col>
+        <Form.Group as={Col}>
+          <Form.Control type="number" placeholder="Zip Code" />
+        </Form.Group>
       </Form.Row>
 
-      <Form.Group id="formGridCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
+      <h5>Add a note to your order</h5>
+      <Form.Row>
+        <Form.Group as={Col}>
+          <Form.Control as="textarea" rows="3" />
+        </Form.Group>
+      </Form.Row>
 
-      <Button variant="primary" type="submit">
-        Submit
+      <Button variant="primary" type="submit" block>
+        CHECKOUT
       </Button>
     </Form>
   );
