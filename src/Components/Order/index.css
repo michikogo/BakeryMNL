@@ -1,3 +1,4 @@
+/*********** ORDER ***********/
 .order-title {
   text-align: center;
   margin-bottom: 25px;
@@ -18,3 +19,11 @@
   background-color: #fff;
   padding: 30px 50px !important;
 }
+
+/*********** PICKUP ***********/
+.title-padding-bottom {
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+/*********** DELIVER ***********/

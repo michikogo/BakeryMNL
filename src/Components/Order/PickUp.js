@@ -4,88 +4,78 @@ import { Form, Col, Button } from "react-bootstrap";
 const PickUp = () => {
   return (
     <Form>
-      <h1>PickUp</h1>
+      <h1 className="title-padding-bottom">ORDER FOR PICKUP</h1>
+      <h4>Contact Details</h4>
       <Form.Row>
         <Form.Group as={Col}>
-          <Form.Label>First Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter First Name" />
+          <Form.Control type="text" placeholder="First Name" />
         </Form.Group>
 
         <Form.Group as={Col}>
-          <Form.Label>Last Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter Last Name" />
+          <Form.Control type="text" placeholder="Last Name" />
         </Form.Group>
       </Form.Row>
 
       <Form.Row>
-        <Col>
-          <Form.Group>
-            <Form.Label>Phone Number</Form.Label>
-            <Form.Control type="number" placeholder="Place Phone Number" />
-          </Form.Group>
-        </Col>
-        <Col>
-          <Form.Group>
-            <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="Place Email" />
-          </Form.Group>
-        </Col>
+        <Form.Group as={Col}>
+          <Form.Control type="number" placeholder="Mobile Number" />
+        </Form.Group>
+        <Form.Group as={Col}>
+          <Form.Control type="email" placeholder="Email (Optional)" />
+        </Form.Group>
       </Form.Row>
 
       <Form.Row>
-        <Col xs={3}>
-          <Form.Group>
-            <Form.Label>Mode of Claim</Form.Label>
-            <Form.Control as="select">
-              <option>Store Pickup</option>
-              <option>Delivery</option>
-            </Form.Control>
-          </Form.Group>
-        </Col>
+        <Form.Group as={Col}>
+          <Form.Label>Where do you like to pickup your order?</Form.Label>
+          <Form.Control as="select" multiple>
+            <option>Manila</option>
+            <option>Mandaluyong</option>
+            <option>San Juan</option>
+            <option>Valenzuela</option>
+            <option>Quezon City</option>
+            <option>Marikina</option>
+            <option>Pasig</option>
+            <option>Taguig</option>
+            <option>Makati</option>
+            <option>Pasay</option>
+          </Form.Control>
+        </Form.Group>
+      </Form.Row>
+
+      <h4>Select Date and Time</h4>
+      <Form.Row>
+        <Form.Group as={Col}>
+          <Form.Control as="select" placeholder="Date">
+            <option>Monday</option>
+            <option>Tuesday</option>
+            <option>Wednesday</option>
+            <option>Thursday</option>
+            <option>Friday</option>
+          </Form.Control>
+        </Form.Group>
+        <Form.Group as={Col}>
+          <Form.Control as="select" placeholder="Time">
+            <option>11:00</option>
+            <option>12:00</option>
+            <option>1:00</option>
+            <option>2:00</option>
+            <option>3:00</option>
+            <option>4:00</option>
+            <option>5:00</option>
+          </Form.Control>
+        </Form.Group>
       </Form.Row>
 
       <Form.Row>
-        <Col>
-          <Form.Group>
-            <Form.Label>Branch</Form.Label>
-            <Form.Control as="select">
-              <option>America</option>
-              <option>Japan</option>
-              <option>Philippines</option>
-              <option>Singapore</option>
-              <option>Hong Kong</option>
-              <option>Italy</option>
-              <option>France</option>
-              <option>Ireland</option>
-            </Form.Control>
-          </Form.Group>
-        </Col>
+        <Form.Group as={Col}>
+          <Form.Label>Add a note to your order</Form.Label>
+          <Form.Control type="textarea" col="3" />
+        </Form.Group>
       </Form.Row>
 
-      <Form.Row>
-        <Col>
-          <Form.Group>
-            <Form.Label>Delivery</Form.Label>
-            <Form.Control as="select">
-              <option>America</option>
-              <option>Japan</option>
-              <option>Philippines</option>
-              <option>Singapore</option>
-              <option>Hong Kong</option>
-              <option>Italy</option>
-              <option>France</option>
-              <option>Ireland</option>
-            </Form.Control>
-          </Form.Group>
-        </Col>
-      </Form.Row>
-
-      <Form.Group id="formGridCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
-
-      <Button variant="primary" type="submit">
-        Submit
+      <Button variant="primary" type="submit" block>
+        CHECKOUT
       </Button>
     </Form>
   );
