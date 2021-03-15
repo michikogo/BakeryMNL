@@ -5,7 +5,7 @@ import "./index.css";
 import { Container, Button, Row, Col } from "react-bootstrap";
 import Deliver from "./Components/Deliver";
 import PickUp from "./Components/PickUp";
-import Cart from "./Components/Cart";
+import CartList from "./Components/CartList";
 
 const Order = () => {
   const [isPickUp, setIsPickUp] = useState(true);
@@ -21,10 +21,6 @@ const Order = () => {
     setIsPickUp(false);
     setIsDeliver(true);
   };
-
-  // const computeSingles = () = > {
-
-  // }
 
   useEffect(() => {
     fetch("http://localhost:8000/cart")
@@ -47,7 +43,7 @@ const Order = () => {
       </Row>
 
       {/* TABLE */}
-      <Row>{cart && <Cart cart={cart} />}</Row>
+      <Row>{cart && <CartList cart={cart} />}</Row>
 
       {/* PICKUP OR DELIVERY */}
       <Row style={{ placeContent: "center" }}>
