@@ -1,4 +1,4 @@
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar, Nav, NavItem } from "react-bootstrap";
 
 import { logo } from "../../Assets";
 
@@ -18,29 +18,29 @@ const HeaderMenu = () => {
             color: "white",
           }}
         >
-          <Nav.Link>
+          <NavItem>
             <Link to="/" style={{ color: "white" }}>
               Home
             </Link>
-          </Nav.Link>
-          <Nav.Link>
+          </NavItem>
+          <NavItem>
             <Link to="/about" style={{ color: "white", marginLeft: "25px" }}>
               About
             </Link>
-          </Nav.Link>
+          </NavItem>
           <Navbar.Brand>
-            <img src={logo} />
+            <img alt="Cannot Fetch Logo" src={logo} />
           </Navbar.Brand>
-          <Nav.Link>
+          <NavItem>
             <Link to="/bakery" style={{ color: "white", marginRight: "25px" }}>
               Bakery
             </Link>
-          </Nav.Link>
-          <Nav.Link>
+          </NavItem>
+          <NavItem>
             <Link to="/order" style={{ color: "white" }}>
               Order
             </Link>
-          </Nav.Link>
+          </NavItem>
         </Nav>
       </Navbar>
     </div>
