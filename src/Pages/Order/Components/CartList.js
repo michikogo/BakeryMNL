@@ -11,7 +11,7 @@ const Cart = ({ cart }) => {
     amount = amount + price;
     setTotal(amount);
   };
-  console.log(cart);
+  // console.log(cart);
   return (
     <Table responsive>
       <thead>

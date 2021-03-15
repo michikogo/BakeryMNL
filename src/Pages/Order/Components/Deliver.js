@@ -27,7 +27,7 @@ const Deliver = () => {
       zipCode,
       note,
     };
-    console.log(delivery);
+    // console.log(delivery);
     setIsPending(true);
     fetch("http://localhost:8000/delivery", {
       method: "POST",

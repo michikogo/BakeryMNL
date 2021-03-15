@@ -29,7 +29,7 @@ const PickUp = () => {
       time,
       note,
     };
-    console.log(pickupData);
+    // console.log(pickupData);
     setIsPending(true);
     fetch("http://localhost:8000/pickup", {
       method: "POST",
