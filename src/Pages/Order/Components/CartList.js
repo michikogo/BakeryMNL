@@ -1,10 +1,16 @@
 import "../index.css";
-import { Table, Row, Col, Image, Form } from "react-bootstrap";
-import { useState, useEffect } from "react";
+import { Table } from "react-bootstrap";
+import { useState } from "react";
 import CartSingleItem from "./CartSingleItem";
 
 const Cart = ({ cart }) => {
-  const [total, setTotal] = useState(0);
+  let amount = 0;
+  const [total, setTotal] = useState([]);
+
+  const computeTotal = (price) => {
+    amount = amount + price;
+    setTotal(amount);
+  };
 
   return (
     <Table responsive>
@@ -20,7 +26,14 @@ const Cart = ({ cart }) => {
       <tbody>
         {/* GET CONTENTS FROM DB */}
         {cart !== 0 ? (
-          cart.map((data) => <CartSingleItem data={data} />)
+          cart.map((data) => (
+            // Reference the function to child
+            <CartSingleItem
+              key={data.id}
+              data={data}
+              computeTotal={computeTotal}
+            />
+          ))
         ) : (
           // NO ITEMS IN DB
           <tr className="order-textAlign">

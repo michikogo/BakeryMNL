@@ -1,11 +1,14 @@
-import { Table, Row, Col, Image, Form } from "react-bootstrap";
+import { Image, Form } from "react-bootstrap";
 import { useState, useEffect } from "react";
 
-const CartSingleItem = ({ data }) => {
+const CartSingleItem = ({ data, computeTotal }) => {
   const [totalSingle, setTotalSingle] = useState(null);
 
   useEffect(() => {
     setTotalSingle(data.quantity * data.price);
+
+    // Function is in CardList
+    computeTotal(data.quantity * data.price);
   }, []);
 
   return (
