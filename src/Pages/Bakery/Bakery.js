@@ -31,46 +31,49 @@ const Bakery = () => {
 
   return (
     <Container fluid>
-      <h3 style={{ textAlign: "center", marginBottom: "45px" }}>
-        Whats Baking?
-      </h3>
-      {error && (
-        <h6 style={{ textAlign: "center", marginBottom: "25px" }}>{error}</h6>
-      )}
+      <h3 className="bakery-title">Whats Baking?</h3>
+      {/* useEffect Function */}
+      {error && <h6 className="bakery-fetching">{error}</h6>}
       {isPending && (
-        <h6 style={{ textAlign: "center", marginBottom: "25px" }}>
+        <h6 className="bakery-fetching">
           <Spinner animation="border" role="status" />
         </h6>
       )}
-      <CardDeck style={{ placeContent: "center", textAlign: "-webkit-center" }}>
+      {/* Content */}
+      <CardDeck className="bakery-deck">
         {products &&
           products.map((product) => (
-            <Card
-              key={product.id}
-              style={{
-                minWidth: "15rem",
-                maxWidth: "15rem",
-                marginBottom: "25px",
-              }}
-            >
-              <Card.Img
-                variant="top"
-                src={require("../../Assets/Image" + product.imageURL).default}
-                style={{
-                  height: "252.4px",
-                  objectFit: "cover",
-                }}
-              />
+            <Card key={product.id} className="bakery-card">
+              <Link to={`/bakery/${product.id}`}>
+                <Card.Img
+                  variant="top"
+                  src={require("../../Assets/Image" + product.imageURL).default}
+                  className="bakery-card-image"
+                />
+              </Link>
 
               <Card.Body>
-                <Card.Title>{product.title}</Card.Title>
+                <Link
+                  className="bakery-card-title"
+                  to={`/bakery/${product.id}`}
+                >
+                  <Card.Title>{product.title}</Card.Title>
+                </Link>
               </Card.Body>
-              <Card.Footer style={{ color: "#ED474A" }}>
-                Price: ₱{product.price}
+              <Card.Footer>
+                <Link
+                  className="bakery-card-price"
+                  to={`/bakery/${product.id}`}
+                >
+                  Price: ₱{product.price}
+                </Link>
               </Card.Footer>
               <Card.Footer>
-                <Link to={`/bakery/${product.id}`}>
-                  <large className="text-muted">Order Now</large>
+                <Link
+                  className="bakery-card-order"
+                  to={`/bakery/${product.id}`}
+                >
+                  <large className="text-muted">Order Now!</large>
                 </Link>
               </Card.Footer>
             </Card>

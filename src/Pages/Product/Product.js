@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import { Container, Row, Col, Image, Card, Button } from "react-bootstrap";
+
 import "./index.css";
+import { Container, Row, Col, Image, Card, Button } from "react-bootstrap";
+
 const Product = () => {
   const { id } = useParams();
   const [item, setItem] = useState(null);
+  const [order, setOrder] = useState(true);
 
   useEffect(() => {
     fetch("http://localhost:8000/products/" + id)
@@ -17,16 +20,22 @@ const Product = () => {
       });
   }, []);
 
+  // Simulating Adding
+  const handleOrder = () => {
+    setOrder(false);
+    setTimeout(() => {
+      setOrder(true);
+    }, 1000);
+  };
+
   return (
-    <Container style={{ padding: "0vh 30px" }}>
+    <Container className="product-container">
       {item && (
-        <Card style={{ padding: "30px" }}>
+        <Card className="product-card">
           <Card.Body>
-            <h5 style={{ textAlign: "center", paddingBottom: "30px" }}>
-              {item.title}
-            </h5>
+            <h5 className="product-title">{item.title}</h5>
             <Row>
-              <Col sm={4} style={{ textAlign: "right" }}>
+              <Col sm={4}>
                 <Image
                   src={require("../../Assets/Image" + item.imageURL).default}
                   alt={item.imageURL}
@@ -34,26 +43,33 @@ const Product = () => {
                   width="300px"
                 />
               </Col>
-              <Col sm={8} style={{ paddingLeft: "30px", alignSelf: "center" }}>
+              <Col sm={8} className="product-details">
                 <Row>
                   <Col>
                     <h6>Description:</h6>
                     <div>{item.desc}</div>
                   </Col>
                 </Row>
-                <Row style={{ paddingTop: "20px" }}>
-                  <Col>
-                    <h6>Price: ₱{item.price}</h6>
-                  </Col>
+                <Row className="product-price-quantity">
                   <Col>
                     <h6>Quantity: </h6>
                   </Col>
+                  <Col>
+                    <h6>Price: ₱{item.price}</h6>
+                  </Col>
                 </Row>
-                <Row style={{ textAlign: "center", paddingTop: "20px" }}>
+                <Row className="product-button">
                   <Col sm={6}>
-                    <Button variant="success" block>
-                      Add To Order
-                    </Button>
+                    {order && (
+                      <Button variant="success" block onClick={handleOrder}>
+                        Add To Order
+                      </Button>
+                    )}
+                    {!order && (
+                      <Button variant="success" block disabled>
+                        Adding...
+                      </Button>
+                    )}
                   </Col>
                   <Col sm={6}>
                     <Button variant="primary" block>

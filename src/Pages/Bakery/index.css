@@ -2,3 +2,43 @@
 .ant-card-meta-description {
   white-space: normal;
 }
+.bakery-card {
+  min-width: 15rem !important;
+  max-width: 15rem !important;
+  margin-bottom: 25px !important;
+}
+.bakery-card-image {
+  height: 252.4px !important;
+  object-fit: cover !important;
+}
+
+.bakery-title {
+  text-align: center;
+  margin-bottom: 45px;
+}
+.bakery-fetching {
+  text-align: center;
+  margin-bottom: 25px;
+}
+.bakery-deck {
+  place-content: center;
+  text-align: -webkit-center;
+}
+.bakery-card-title {
+  color: black;
+}
+.bakery-card-title:hover {
+  color: #ed474a;
+  text-decoration: none;
+}
+.bakery-card-price {
+  color: #ed474a;
+}
+.bakery-card-price:hover {
+  color: black;
+  text-decoration: none;
+}
+.bakery-card-order,
+.bakery-card-order:hover {
+  color: black;
+}

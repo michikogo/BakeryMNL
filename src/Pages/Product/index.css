@@ -2,3 +2,27 @@
   background-color: #d09fa3 !important;
   border-color: #d09fa3 !important;
 }
+.btn-success:focus {
+  box-shadow: none !important;
+}
+.product-container {
+  padding: 0px 30px !important;
+}
+.product-card {
+  padding: 30px;
+}
+.product-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+.product-details {
+  padding-left: 30px;
+  align-self: center;
+}
+.product-price-quantity {
+  padding-top: 20px;
+}
+.product-button {
+  text-align: center;
+  padding-top: 20px;
+}
