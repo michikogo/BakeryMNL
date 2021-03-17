@@ -92,7 +92,7 @@ const PickUp = ({ handleBought, cartLength }) => {
         <Form.Row>
           <Form.Group as={Col}>
             <Form.Control
-              type="number"
+              type="text"
               placeholder="Mobile Number"
               required
               value={mobileNumber}
