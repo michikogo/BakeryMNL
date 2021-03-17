@@ -16,6 +16,7 @@ const Product = () => {
   const { id } = useParams();
   const history = useHistory();
   const [item, setItem] = useState(null);
+  const [cartItem, setCartItem] = useState(null);
   const [order, setOrder] = useState(true);
   const [quantity, setQuantity] = useState(0);
   const [buyNow, setBuyNow] = useState(true);
@@ -27,26 +28,61 @@ const Product = () => {
       })
       .then((data) => {
         setItem(data);
-        console.log(item);
+      });
+
+    fetch("http://localhost:8000/cart")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setCartItem(data);
       });
   }, []);
 
   // Simulating Adding
   const handleOrder = (imageURL, title, price, quantity) => {
     setOrder(false);
-    setTimeout(() => {
-      const data = { imageURL, title, price, quantity };
-      console.log(data);
-      fetch("http://localhost:8000/cart", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      }).then(() => {
-        console.log("Add to Cart");
-        setQuantity(0);
-        setOrder(true);
+
+    let singleThing;
+    cartItem
+      .filter((thing) => thing.imageURL === imageURL)
+      .map((filteredThing) => {
+        singleThing = filteredThing;
       });
-    }, 1000);
+
+    if (singleThing != null) {
+      console.log("Is in Cart");
+      console.log(singleThing);
+      let sum = Number(singleThing.quantity) + Number(quantity);
+      // let quantity = sum;
+      const data = { imageURL, title, price, quantity: sum };
+      setTimeout(() => {
+        fetch("http://localhost:8000/cart/" + singleThing.id, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        }).then(() => {
+          console.log("Add to Cart");
+          setQuantity(0);
+          setOrder(true);
+        });
+      }, 1000);
+    } else {
+      console.log("Not Added In Cart Yet");
+      setTimeout(() => {
+        const data = { imageURL, title, price, quantity };
+        console.log(data);
+        fetch("http://localhost:8000/cart", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        }).then(() => {
+          console.log("Add to Cart");
+          setQuantity(0);
+          setOrder(true);
+        });
+      }, 1000);
+    }
   };
 
   // Simulating Buy
