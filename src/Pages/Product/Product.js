@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router";
+import { useParams, useHistory } from "react-router";
 
 import "./index.css";
 import {
@@ -14,9 +14,11 @@ import {
 
 const Product = () => {
   const { id } = useParams();
+  const history = useHistory();
   const [item, setItem] = useState(null);
   const [order, setOrder] = useState(true);
   const [quantity, setQuantity] = useState(0);
+  const [buyNow, setBuyNow] = useState(true);
 
   useEffect(() => {
     fetch("http://localhost:8000/products/" + id)
@@ -45,6 +47,23 @@ const Product = () => {
         setOrder(true);
       });
     }, 1000);
+  };
+
+  // Simulating Buy
+  const handleBuyNow = (imageURL, title, price, quantity) => {
+    setBuyNow(false);
+    const data = { imageURL, title, price, quantity };
+    console.log(data);
+    fetch("http://localhost:8000/cart", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    }).then(() => {
+      console.log("Add to Cart");
+      setQuantity(0);
+      setBuyNow(true);
+      history.push("/order");
+    });
   };
 
   return (
@@ -129,10 +148,29 @@ const Product = () => {
                       </Button>
                     )}
                   </Col>
+
                   <Col sm={6}>
-                    <Button variant="primary" block>
-                      Buy Now
-                    </Button>
+                    {buyNow && (
+                      <Button
+                        variant="primary"
+                        block
+                        onClick={() =>
+                          handleBuyNow(
+                            item.imageURL,
+                            item.title,
+                            item.price,
+                            quantity
+                          )
+                        }
+                      >
+                        Buy Now
+                      </Button>
+                    )}
+                    {!buyNow && (
+                      <Button variant="primary" block disabled>
+                        Routing to Cart....
+                      </Button>
+                    )}
                   </Col>
                 </Row>
               </Col>
