@@ -12,6 +12,7 @@ const Order = () => {
   const [isPickUp, setIsPickUp] = useState(true);
   const [isDeliver, setIsDeliver] = useState(false);
   const [cart, setCart] = useState(null);
+  const [cartLength, setCartLength] = useState(0);
 
   const modePickUp = () => {
     setIsPickUp(true);
@@ -30,8 +31,21 @@ const Order = () => {
       })
       .then((data) => {
         setCart(data);
+        setCartLength(data.length);
       });
   }, []);
+
+  const handleBought = () => {
+    if (cart.length != 0) {
+      cart.map((itemCart) => {
+        fetch("http://localhost:8000/cart/" + itemCart.id, {
+          method: "DELETE",
+        });
+      });
+    } else {
+      alert("There is no items in the cart");
+    }
+  };
 
   return (
     <Container fluid="md">
@@ -86,9 +100,11 @@ const Order = () => {
       <Row>
         <Col className="order-content">
           {/* if pickup is true */}
-          {isPickUp && <PickUp />}
+          {isPickUp && (
+            <PickUp handleBought={handleBought} cartLength={cartLength} />
+          )}
           {/* if deliver is true */}
-          {isDeliver && <Deliver />}
+          {isDeliver && <Deliver handleBought={handleBought} />}
         </Col>
       </Row>
     </Container>

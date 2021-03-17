@@ -4,7 +4,7 @@ import { useHistory } from "react-router";
 import "../index.css";
 import { Form, Col, Button, Modal } from "react-bootstrap";
 
-const PickUp = () => {
+const PickUp = ({ handleBought, cartLength }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
@@ -38,6 +38,8 @@ const PickUp = () => {
     });
   };
 
+  // console.log("cartLength=" + cartLength);
+
   const handleClose = () => {
     // Close Modal
     setShow(false);
@@ -52,9 +54,11 @@ const PickUp = () => {
     setDate("");
     setTime("");
     setNote("");
+    handleBought();
     // Go back home
     history.push("/");
   };
+
   const handleShow = () => setShow(true);
 
   return (
@@ -179,12 +183,21 @@ const PickUp = () => {
           </Form.Group>
         </Form.Row>
 
-        {!isPending && (
+        {!cartLength && (
+          <div>
+            <Button variant="primary" type="submit" block disabled>
+              Add Orders in Cart
+            </Button>
+          </div>
+        )}
+
+        {!isPending && cartLength > 0 && (
           <Button variant="primary" type="submit" onClick={handleShow} block>
             CHECKOUT
           </Button>
         )}
-        {isPending && (
+
+        {isPending && cartLength && (
           <div>
             <Button variant="primary" type="submit" block disabled>
               Processing Payment
@@ -201,12 +214,14 @@ const PickUp = () => {
                 <Modal.Title>Processing Payment</Modal.Title>
               </Modal.Header>
               <Modal.Body>
-                Thank You {firstName} for ordering from BakeryMNL! <br />
-                We will inform you when your item has been shipped.
+                Thank You <b>{firstName}</b> for ordering from BakeryMNL! <br />
+                We will inform you in text when your item has been shipped.{" "}
+                <br />
+                Click <b>Confirm Payment</b> for the items to be processed.
               </Modal.Body>
               <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                  Close
+                <Button variant="success" onClick={handleClose}>
+                  Confirm Payment
                 </Button>
               </Modal.Footer>
             </Modal>
