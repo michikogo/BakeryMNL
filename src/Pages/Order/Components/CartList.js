@@ -5,7 +5,7 @@ import CartSingleItem from "./CartSingleItem";
 
 const Cart = ({ cart }) => {
   let amount = 0;
-  const [total, setTotal] = useState([]);
+  const [total, setTotal] = useState(0);
 
   const computeTotal = (price) => {
     amount = amount + price;
