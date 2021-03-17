@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import "./index.css";
-import { Container, Button, Row, Col, Image } from "react-bootstrap";
+import { Container, Button, Row, Col, Spinner } from "react-bootstrap";
 import Deliver from "./Components/Deliver";
 import PickUp from "./Components/PickUp";
 import CartList from "./Components/CartList";
@@ -13,6 +13,8 @@ const Order = () => {
   const [isDeliver, setIsDeliver] = useState(false);
   const [cart, setCart] = useState(null);
   const [cartLength, setCartLength] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+  const [errorMessage, setErrorMessage] = useState(true);
 
   const modePickUp = () => {
     setIsPickUp(true);
@@ -27,11 +29,22 @@ const Order = () => {
   useEffect(() => {
     fetch("http://localhost:8000/cart")
       .then((res) => {
+        if (!res.ok) {
+          throw Error("Cannot Be Fetched");
+        }
         return res.json();
       })
       .then((data) => {
         setCart(data);
         setCartLength(data.length);
+
+        setIsLoading(false);
+        setErrorMessage(null);
+      })
+      .catch((err) => {
+        setIsLoading(false);
+        console.log(err.message);
+        setErrorMessage(err.message);
       });
   }, []);
 
@@ -57,8 +70,19 @@ const Order = () => {
         </Col>
       </Row>
 
+      {errorMessage && <h6 className="order-fetching">{errorMessage}</h6>}
+
       {/* TABLE */}
-      <Row>{cart && <CartList cart={cart} />}</Row>
+      {isLoading && (
+        <h6 className="order-fetching">
+          <Spinner animation="border" role="status" />
+        </h6>
+      )}
+      {!isLoading && cart && (
+        <Row>
+          <CartList cart={cart} />
+        </Row>
+      )}
 
       {/* PICKUP OR DELIVERY */}
       <Row style={{ placeContent: "center" }}>
@@ -104,7 +128,9 @@ const Order = () => {
             <PickUp handleBought={handleBought} cartLength={cartLength} />
           )}
           {/* if deliver is true */}
-          {isDeliver && <Deliver handleBought={handleBought} />}
+          {isDeliver && (
+            <Deliver handleBought={handleBought} cartLength={cartLength} />
+          )}
         </Col>
       </Row>
     </Container>

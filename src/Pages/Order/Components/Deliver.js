@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 import "../index.css";
 import { Form, Col, Button, Modal, Row } from "react-bootstrap";
 
-const Deliver = () => {
+const Deliver = ({ handleBought, cartLength }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
@@ -49,6 +49,7 @@ const Deliver = () => {
     setCity("");
     setZipCode("");
     setNote("");
+    handleBought();
     // Go back home
     history.push("/");
   };
@@ -64,7 +65,7 @@ const Deliver = () => {
           <Form.Control
             type="text"
             placeholder="First Name"
-            require
+            // require
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
           />
@@ -73,7 +74,7 @@ const Deliver = () => {
           <Form.Control
             type="text"
             placeholder="Last Name"
-            require
+            // require
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
           />
@@ -85,7 +86,7 @@ const Deliver = () => {
           <Form.Control
             type="text"
             placeholder="Mobile Number"
-            require
+            // require
             value={mobileNumber}
             onChange={(e) => setMobileNumber(e.target.value)}
           />
@@ -109,7 +110,7 @@ const Deliver = () => {
         <Col sm="10">
           <Form.Control
             type="text"
-            require
+            // require
             value={address}
             onChange={(e) => setAddress(e.target.value)}
           />
@@ -123,7 +124,7 @@ const Deliver = () => {
         <Col sm="10">
           <Form.Control
             as="select"
-            require
+            // require
             value={city}
             onChange={(e) => setCity(e.target.value)}
           >
@@ -161,7 +162,7 @@ const Deliver = () => {
           <Form.Control
             as="textarea"
             rows="4"
-            require
+            // require
             value={note}
             onChange={(e) => setNote(e.target.value)}
           />

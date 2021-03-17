@@ -63,6 +63,10 @@
 .table {
   margin-bottom: 3rem !important;
 }
+.order-fetching {
+  text-align: center;
+  margin-bottom: 25px;
+}
 /*********** PICKUP ***********/
 .title-padding-bottom {
   padding-bottom: 15px;
