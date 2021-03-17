@@ -188,13 +188,13 @@ const Deliver = ({ handleBought, cartLength }) => {
         </div>
       )}
       {/* ENABLE CHECKOUT */}
-      {cartLength != 0 && !isDisabled && (
+      {cartLength !== 0 && !isDisabled && (
         <Button variant="primary" type="submit" onClick={handleShow} block>
           CHECKOUT
         </Button>
       )}
       {/* DISABLE MODAL SHOW */}
-      {cartLength != 0 && isDisabled && (
+      {cartLength !== 0 && isDisabled && (
         <div>
           <Button variant="primary" type="submit" block disabled>
             Processing Payment

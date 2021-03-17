@@ -43,7 +43,7 @@ const Product = () => {
     let singleThing;
     cartItem
       .filter((thing) => thing.imageURL === imageURL)
-      .map((filteredThing) => {
+      .forEach((filteredThing) => {
         singleThing = filteredThing;
       });
 

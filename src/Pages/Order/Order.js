@@ -49,8 +49,9 @@ const Order = () => {
   }, []);
 
   const handleBought = () => {
-    if (cart.length != 0) {
-      cart.map((itemCart) => {
+    if (cart.length !== 0) {
+      cart.forEach((itemCart) => {
+        console.log(itemCart);
         fetch("http://localhost:8000/cart/" + itemCart.id, {
           method: "DELETE",
         });
@@ -98,7 +99,12 @@ const Order = () => {
                 : "order-initial-mode-btn"
             }
           >
-            <img src={pickup} width="25" style={{ marginRight: "5px" }} />
+            <img
+              src={pickup}
+              alt="cant fetch"
+              width="25"
+              style={{ marginRight: "5px" }}
+            />
             Pick Up
           </Button>
         </Col>
@@ -114,7 +120,12 @@ const Order = () => {
                 : "order-initial-mode-btn"
             }
           >
-            <img src={deliver} width="25" style={{ marginRight: "5px" }} />
+            <img
+              src={deliver}
+              alt="cant fetch"
+              width="25"
+              style={{ marginRight: "5px" }}
+            />
             Deliver
           </Button>
         </Col>

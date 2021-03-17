@@ -1,5 +1,5 @@
-import { Row, Col } from "react-bootstrap";
 import { logo } from "../../Assets/index";
+
 const Footer = () => {
   return (
     <div
@@ -9,7 +9,7 @@ const Footer = () => {
         padding: "16px 8px",
       }}
     >
-      <img src={logo} />
+      <img src={logo} alt="logo" />
       <div
         style={{
           paddingTop: "15px",

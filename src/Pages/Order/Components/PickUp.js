@@ -191,7 +191,7 @@ const PickUp = ({ handleBought, cartLength }) => {
           </div>
         )}
 
-        {!isPending && cartLength > 0 && (
+        {!isPending && cartLength !== 0 && (
           <Button variant="primary" type="submit" onClick={handleShow} block>
             CHECKOUT
           </Button>
