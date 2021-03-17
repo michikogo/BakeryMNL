@@ -39,10 +39,7 @@ const Product = () => {
       });
   }, []);
 
-  // Simulating Adding
-  const handleOrder = (imageURL, title, price, quantity) => {
-    setOrder(false);
-
+  const handleDB = (imageURL, title, price, quantity) => {
     let singleThing;
     cartItem
       .filter((thing) => thing.imageURL === imageURL)
@@ -53,53 +50,48 @@ const Product = () => {
     if (singleThing != null) {
       console.log("Is in Cart");
       console.log(singleThing);
+
       let sum = Number(singleThing.quantity) + Number(quantity);
-      // let quantity = sum;
       const data = { imageURL, title, price, quantity: sum };
-      setTimeout(() => {
-        fetch("http://localhost:8000/cart/" + singleThing.id, {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        }).then(() => {
-          console.log("Add to Cart");
-          setQuantity(0);
-          setOrder(true);
-        });
-      }, 1000);
+
+      fetch("http://localhost:8000/cart/" + singleThing.id, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
     } else {
       console.log("Not Added In Cart Yet");
-      setTimeout(() => {
-        const data = { imageURL, title, price, quantity };
-        console.log(data);
-        fetch("http://localhost:8000/cart", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        }).then(() => {
-          console.log("Add to Cart");
-          setQuantity(0);
-          setOrder(true);
-        });
-      }, 1000);
+
+      const data = { imageURL, title, price, quantity };
+      console.log(data);
+
+      fetch("http://localhost:8000/cart", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
     }
   };
 
+  // Simulating Adding
+  const handleOrder = (imageURL, title, price, quantity) => {
+    setOrder(false);
+    setTimeout(() => {
+      handleDB(imageURL, title, price, quantity);
+      console.log("Add to Cart");
+      setQuantity(0);
+      setOrder(true);
+    }, 1000);
+  };
   // Simulating Buy
   const handleBuyNow = (imageURL, title, price, quantity) => {
     setBuyNow(false);
-    const data = { imageURL, title, price, quantity };
-    console.log(data);
-    fetch("http://localhost:8000/cart", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    }).then(() => {
-      console.log("Add to Cart");
-      setQuantity(0);
+    setTimeout(() => {
+      handleDB(imageURL, title, price, quantity);
+      console.log("Redirecting to Orders");
       setBuyNow(true);
       history.push("/order");
-    });
+    }, 1000);
   };
 
   return (
