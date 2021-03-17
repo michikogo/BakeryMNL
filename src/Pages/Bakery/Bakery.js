@@ -73,7 +73,7 @@ const Bakery = () => {
                   className="bakery-card-order"
                   to={`/bakery/${product.id}`}
                 >
-                  <large className="text-muted">Order Now!</large>
+                  Order Now!
                 </Link>
               </Card.Footer>
             </Card>
