@@ -12,12 +12,13 @@ const Deliver = ({ handleBought, cartLength }) => {
   const [city, setCity] = useState("");
   const [zipCode, setZipCode] = useState("");
   const [note, setNote] = useState("");
-  const [isPending, setIsPending] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
   const [show, setShow] = useState(false);
   const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Array placed in db
     const delivery = {
       firstName,
       lastName,
@@ -27,8 +28,9 @@ const Deliver = ({ handleBought, cartLength }) => {
       zipCode,
       note,
     };
-    // console.log(delivery);
-    setIsPending(true);
+    // Buttion is enabled
+    setIsDisabled(true);
+    // Place in db
     fetch("http://localhost:8000/delivery", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -36,11 +38,12 @@ const Deliver = ({ handleBought, cartLength }) => {
     });
   };
 
+  // CLOSE MODAL
   const handleClose = () => {
     // Close Modal
     setShow(false);
     // Button enabled
-    setIsPending(false);
+    setIsDisabled(false);
     // Clear Form
     setFirstName("");
     setLastName("");
@@ -53,23 +56,27 @@ const Deliver = ({ handleBought, cartLength }) => {
     // Go back home
     history.push("/");
   };
+
+  // SHOW MODAL
   const handleShow = () => setShow(true);
 
   return (
     <Form onSubmit={handleSubmit}>
       <h3 className="title-padding-bottom">ORDER FOR DELIVERY</h3>
-
       <h5 className="details-padding-top">Contact Details</h5>
+
       <Form.Row>
+        {/* FIRST NAME */}
         <Form.Group as={Col}>
           <Form.Control
             type="text"
             placeholder="First Name"
-            // require
+            require
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
           />
         </Form.Group>
+        {/* LAST NAME */}
         <Form.Group as={Col}>
           <Form.Control
             type="text"
@@ -82,6 +89,7 @@ const Deliver = ({ handleBought, cartLength }) => {
       </Form.Row>
 
       <Form.Row>
+        {/* MOBILE NUMBER */}
         <Form.Group as={Col}>
           <Form.Control
             type="text"
@@ -91,6 +99,7 @@ const Deliver = ({ handleBought, cartLength }) => {
             onChange={(e) => setMobileNumber(e.target.value)}
           />
         </Form.Group>
+        {/* EMAIL */}
         <Form.Group as={Col}>
           <Form.Control
             type="email"
@@ -102,7 +111,7 @@ const Deliver = ({ handleBought, cartLength }) => {
       </Form.Row>
 
       <h5 className="details-padding-top">Delivery Address</h5>
-
+      {/* ADDRESS */}
       <Form.Group as={Row}>
         <Form.Label column sm="2">
           Address
@@ -116,7 +125,7 @@ const Deliver = ({ handleBought, cartLength }) => {
           />
         </Col>
       </Form.Group>
-
+      {/* CITY */}
       <Form.Group as={Row}>
         <Form.Label column sm="2">
           City
@@ -142,7 +151,7 @@ const Deliver = ({ handleBought, cartLength }) => {
           </Form.Control>
         </Col>
       </Form.Group>
-
+      {/* ZIP CODE */}
       <Form.Group as={Row}>
         <Form.Label column sm="2">
           Zip Code
@@ -158,6 +167,7 @@ const Deliver = ({ handleBought, cartLength }) => {
 
       <h5 className="details-padding-top">Add a note to your order</h5>
       <Form.Row>
+        {/* NOTE */}
         <Form.Group as={Col}>
           <Form.Control
             as="textarea"
@@ -169,12 +179,22 @@ const Deliver = ({ handleBought, cartLength }) => {
         </Form.Group>
       </Form.Row>
 
-      {!isPending && (
+      {/* DISABLE EMPTY CART */}
+      {!cartLength && (
+        <div>
+          <Button variant="primary" type="submit" block disabled>
+            Add Orders in Cart
+          </Button>
+        </div>
+      )}
+      {/* ENABLE CHECKOUT */}
+      {cartLength != 0 && !isDisabled && (
         <Button variant="primary" type="submit" onClick={handleShow} block>
           CHECKOUT
         </Button>
       )}
-      {isPending && (
+      {/* DISABLE MODAL SHOW */}
+      {cartLength != 0 && isDisabled && (
         <div>
           <Button variant="primary" type="submit" block disabled>
             Processing Payment
@@ -195,8 +215,8 @@ const Deliver = ({ handleBought, cartLength }) => {
               We will inform you when your item has been shipped.
             </Modal.Body>
             <Modal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
-                Close
+              <Button variant="success" onClick={handleClose}>
+                Confirm Payment
               </Button>
             </Modal.Footer>
           </Modal>
