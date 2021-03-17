@@ -52,13 +52,24 @@ const Product = () => {
       console.log(singleThing);
 
       let sum = Number(singleThing.quantity) + Number(quantity);
-      const data = { imageURL, title, price, quantity: sum };
+      if (sum > 5) {
+        alert(
+          "Sorry we cannot give you " +
+            quantity +
+            " since we make 5 of the same pastry per day\nYou currently have " +
+            singleThing.quantity +
+            " " +
+            singleThing.title
+        );
+      } else {
+        const data = { imageURL, title, price, quantity: sum };
 
-      fetch("http://localhost:8000/cart/" + singleThing.id, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+        fetch("http://localhost:8000/cart/" + singleThing.id, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+      }
     } else {
       console.log("Not Added In Cart Yet");
 
