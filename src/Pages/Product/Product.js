@@ -32,7 +32,10 @@ const Product = () => {
       })
       .then((data) => {
         setItem(data);
+        // Tab title
+        document.title = "BakeryMNL | " + data.title;
       });
+
     // Get cart DB
     fetch("http://localhost:8000/cart")
       .then((res) => {

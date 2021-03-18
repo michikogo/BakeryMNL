@@ -20,6 +20,9 @@ const Order = () => {
   useEffect(() => {
     // Scroll to top
     window.scrollTo(0, 0);
+    // Tab title
+    document.title = "BakeryMNL | Order";
+
     // Fetch cart DB
     fetch("http://localhost:8000/cart")
       .then((res) => {

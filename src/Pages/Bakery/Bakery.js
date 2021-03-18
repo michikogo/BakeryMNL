@@ -12,6 +12,8 @@ const Bakery = () => {
   useEffect(() => {
     // Scroll to top
     window.scrollTo(0, 0);
+    // Tab title
+    document.title = "BakeryMNL | Bakery";
     // Fetch items in products DB
     fetch("http://localhost:8000/products")
       .then((res) => {
