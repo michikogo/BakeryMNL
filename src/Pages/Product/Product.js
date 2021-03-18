@@ -94,6 +94,7 @@ const Product = () => {
       setOrder(true);
     }, 1000);
   };
+
   // Simulating Buy
   const handleBuyNow = (imageURL, title, price, quantity) => {
     setBuyNow(false);
@@ -165,7 +166,12 @@ const Product = () => {
                 {/* BUTTONS */}
                 <Row className="product-button">
                   <Col sm={6}>
-                    {order && (
+                    {!quantity && (
+                      <Button variant="success" block disabled>
+                        Add To Order
+                      </Button>
+                    )}
+                    {order && quantity > 0 && (
                       <Button
                         variant="success"
                         block
@@ -189,7 +195,12 @@ const Product = () => {
                   </Col>
 
                   <Col sm={6}>
-                    {buyNow && (
+                    {!quantity && (
+                      <Button variant="primary" block disabled>
+                        Buy Now
+                      </Button>
+                    )}
+                    {buyNow && quantity > 0 && (
                       <Button
                         variant="primary"
                         block
