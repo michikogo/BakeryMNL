@@ -1,7 +1,9 @@
 import { Image } from "react-bootstrap";
 import { useState, useEffect } from "react";
+import { useHistory } from "react-router";
 
 const CartSingleItem = ({ data, computeTotal }) => {
+  const history = useHistory();
   const [totalSingle, setTotalSingle] = useState(null);
 
   useEffect(() => {
@@ -11,6 +13,14 @@ const CartSingleItem = ({ data, computeTotal }) => {
     computeTotal(data.quantity * data.price);
   }, []);
 
+  const handleRemove = () => {
+    console.log(data);
+    fetch("http://localhost:8000/cart/" + data.id, {
+      method: "DELETE",
+    }).then(() => {
+      history.go(0);
+    });
+  };
   return (
     <tr className="order-textAlign">
       {/* IMAGE */}
@@ -23,6 +33,11 @@ const CartSingleItem = ({ data, computeTotal }) => {
       {/* TITLE */}
       <td className="order-verticalAlign">
         <div className="order-fontWeight">{data.title}</div>
+        <div className="order-fontWeight">
+          <span className="order-remove" onClick={handleRemove}>
+            Remove
+          </span>
+        </div>
       </td>
       {/* PRICE */}
       <td className="order-verticalAlign">
