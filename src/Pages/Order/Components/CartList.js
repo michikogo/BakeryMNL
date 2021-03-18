@@ -15,6 +15,7 @@ const Cart = ({ cart }) => {
   return (
     <Table responsive>
       <thead>
+        {/* HEADER */}
         <tr>
           <th>Product</th>
           <th></th>
@@ -42,6 +43,7 @@ const Cart = ({ cart }) => {
             </td>
           </tr>
         )}
+        {/* SHOW TOTAL */}
         <tr className="order-textAlign">
           <td colSpan="4" className="order-total">
             Total

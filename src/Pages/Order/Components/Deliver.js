@@ -61,168 +61,167 @@ const Deliver = ({ handleBought, cartLength }) => {
   const handleShow = () => setShow(true);
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <div>
       <h3 className="title-padding-bottom">ORDER FOR DELIVERY</h3>
-      <h5 className="details-padding-top">Contact Details</h5>
 
-      <Form.Row>
-        {/* FIRST NAME */}
-        <Form.Group as={Col}>
-          <Form.Control
-            type="text"
-            placeholder="First Name"
-            require
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-          />
+      <Form onSubmit={handleSubmit}>
+        <h5 className="details-padding-top">Contact Details</h5>
+        <Form.Row>
+          {/* FIRST NAME */}
+          <Form.Group as={Col}>
+            <Form.Control
+              type="text"
+              placeholder="First Name"
+              require
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
+          </Form.Group>
+          {/* LAST NAME */}
+          <Form.Group as={Col}>
+            <Form.Control
+              type="text"
+              placeholder="Last Name"
+              // require
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
+          </Form.Group>
+        </Form.Row>
+        <Form.Row>
+          {/* MOBILE NUMBER */}
+          <Form.Group as={Col}>
+            <Form.Control
+              type="text"
+              placeholder="Mobile Number"
+              // require
+              value={mobileNumber}
+              onChange={(e) => setMobileNumber(e.target.value)}
+            />
+          </Form.Group>
+          {/* EMAIL */}
+          <Form.Group as={Col}>
+            <Form.Control
+              type="email"
+              placeholder="Email (Optional)"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </Form.Group>
+        </Form.Row>
+        <h5 className="details-padding-top">Delivery Address</h5>
+        {/* ADDRESS */}
+        <Form.Group as={Row}>
+          <Form.Label column sm="2">
+            Address
+          </Form.Label>
+          <Col sm="10">
+            <Form.Control
+              type="text"
+              // require
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+            />
+          </Col>
         </Form.Group>
-        {/* LAST NAME */}
-        <Form.Group as={Col}>
-          <Form.Control
-            type="text"
-            placeholder="Last Name"
-            // require
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-          />
+        {/* CITY */}
+        <Form.Group as={Row}>
+          <Form.Label column sm="2">
+            City
+          </Form.Label>
+          <Col sm="10">
+            <Form.Control
+              as="select"
+              // require
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+            >
+              <option></option>
+              <option>Manila</option>
+              <option>Mandaluyong</option>
+              <option>San Juan</option>
+              <option>Valenzuela</option>
+              <option>Quezon City</option>
+              <option>Marikina</option>
+              <option>Pasig</option>
+              <option>Taguig</option>
+              <option>Makati</option>
+              <option>Pasay</option>
+            </Form.Control>
+          </Col>
         </Form.Group>
-      </Form.Row>
+        {/* ZIP CODE */}
+        <Form.Group as={Row}>
+          <Form.Label column sm="2">
+            Zip Code
+          </Form.Label>
+          <Col sm="10">
+            <Form.Control
+              type="number"
+              value={zipCode}
+              onChange={(e) => setZipCode(e.target.value)}
+            />
+          </Col>
+        </Form.Group>
+        <h5 className="details-padding-top">Add a note to your order</h5>
+        <Form.Row>
+          {/* NOTE */}
+          <Form.Group as={Col}>
+            <Form.Control
+              as="textarea"
+              rows="4"
+              // require
+              value={note}
+              onChange={(e) => setNote(e.target.value)}
+            />
+          </Form.Group>
+        </Form.Row>
 
-      <Form.Row>
-        {/* MOBILE NUMBER */}
-        <Form.Group as={Col}>
-          <Form.Control
-            type="text"
-            placeholder="Mobile Number"
-            // require
-            value={mobileNumber}
-            onChange={(e) => setMobileNumber(e.target.value)}
-          />
-        </Form.Group>
-        {/* EMAIL */}
-        <Form.Group as={Col}>
-          <Form.Control
-            type="email"
-            placeholder="Email (Optional)"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </Form.Group>
-      </Form.Row>
-
-      <h5 className="details-padding-top">Delivery Address</h5>
-      {/* ADDRESS */}
-      <Form.Group as={Row}>
-        <Form.Label column sm="2">
-          Address
-        </Form.Label>
-        <Col sm="10">
-          <Form.Control
-            type="text"
-            // require
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-          />
-        </Col>
-      </Form.Group>
-      {/* CITY */}
-      <Form.Group as={Row}>
-        <Form.Label column sm="2">
-          City
-        </Form.Label>
-        <Col sm="10">
-          <Form.Control
-            as="select"
-            // require
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-          >
-            <option></option>
-            <option>Manila</option>
-            <option>Mandaluyong</option>
-            <option>San Juan</option>
-            <option>Valenzuela</option>
-            <option>Quezon City</option>
-            <option>Marikina</option>
-            <option>Pasig</option>
-            <option>Taguig</option>
-            <option>Makati</option>
-            <option>Pasay</option>
-          </Form.Control>
-        </Col>
-      </Form.Group>
-      {/* ZIP CODE */}
-      <Form.Group as={Row}>
-        <Form.Label column sm="2">
-          Zip Code
-        </Form.Label>
-        <Col sm="10">
-          <Form.Control
-            type="number"
-            value={zipCode}
-            onChange={(e) => setZipCode(e.target.value)}
-          />
-        </Col>
-      </Form.Group>
-
-      <h5 className="details-padding-top">Add a note to your order</h5>
-      <Form.Row>
-        {/* NOTE */}
-        <Form.Group as={Col}>
-          <Form.Control
-            as="textarea"
-            rows="4"
-            // require
-            value={note}
-            onChange={(e) => setNote(e.target.value)}
-          />
-        </Form.Group>
-      </Form.Row>
-
-      {/* DISABLE EMPTY CART */}
-      {!cartLength && (
-        <div>
-          <Button variant="primary" type="submit" block disabled>
-            Add Orders in Cart
+        {/* DISABLE EMPTY CART */}
+        {!cartLength && (
+          <div>
+            <Button variant="primary" type="submit" block disabled>
+              Add Orders in Cart
+            </Button>
+          </div>
+        )}
+        {/* ENABLE CHECKOUT */}
+        {cartLength !== 0 && !isDisabled && (
+          <Button variant="primary" type="submit" onClick={handleShow} block>
+            CHECKOUT
           </Button>
-        </div>
-      )}
-      {/* ENABLE CHECKOUT */}
-      {cartLength !== 0 && !isDisabled && (
-        <Button variant="primary" type="submit" onClick={handleShow} block>
-          CHECKOUT
-        </Button>
-      )}
-      {/* DISABLE MODAL SHOW */}
-      {cartLength !== 0 && isDisabled && (
-        <div>
-          <Button variant="primary" type="submit" block disabled>
-            Processing Payment
-          </Button>
-          <Modal
-            show={show}
-            onHide={handleClose}
-            backdrop="static"
-            keyboard={false}
-            centered
-            size="lg"
-          >
-            <Modal.Header>
-              <Modal.Title>Processing Payment</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              Thank You {firstName} for ordering from BakeryMNL! <br />
-              We will inform you when your item has been shipped.
-            </Modal.Body>
-            <Modal.Footer>
-              <Button variant="success" onClick={handleClose}>
-                Confirm Payment
-              </Button>
-            </Modal.Footer>
-          </Modal>
-        </div>
-      )}
-    </Form>
+        )}
+        {/* DISABLE CHECKOUT PROCESSING */}
+        {cartLength !== 0 && isDisabled && (
+          <div>
+            <Button variant="primary" type="submit" block disabled>
+              Processing Payment
+            </Button>
+            <Modal
+              show={show}
+              onHide={handleClose}
+              backdrop="static"
+              keyboard={false}
+              centered
+              size="lg"
+            >
+              <Modal.Header>
+                <Modal.Title>Processing Payment</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                Thank You {firstName} for ordering from BakeryMNL! <br />
+                We will inform you when your item has been shipped.
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant="success" onClick={handleClose}>
+                  Confirm Payment
+                </Button>
+              </Modal.Footer>
+            </Modal>
+          </div>
+        )}
+      </Form>
+    </div>
   );
 };
 

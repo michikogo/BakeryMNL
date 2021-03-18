@@ -9,11 +9,11 @@ const Home = () => {
         <li>Tab Title Change</li>
         <li>Redirect go to top of the page</li>
         <li>home and about page - make design</li>
-        <li>
-          product - button cant be clicked if the user hasnt place quantity
-        </li>
         <li>order page - add remove button for items</li>
         <li>order page - phone numbser should be numbers only</li>
+        <li style={{ textDecoration: "line-through" }}>
+          product - button cant be clicked if the user hasnt place quantity
+        </li>
         <li style={{ textDecoration: "line-through" }}>
           item page - add quantity in db
         </li>

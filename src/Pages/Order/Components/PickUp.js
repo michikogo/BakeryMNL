@@ -68,6 +68,7 @@ const PickUp = ({ handleBought, cartLength }) => {
       <Form onSubmit={handleSubmit}>
         <h5 className="details-padding-top">Contact Details</h5>
         <Form.Row>
+          {/* FIRST NAME */}
           <Form.Group as={Col}>
             <Form.Control
               type="text"
@@ -77,7 +78,7 @@ const PickUp = ({ handleBought, cartLength }) => {
               onChange={(e) => setFirstName(e.target.value)}
             />
           </Form.Group>
-
+          {/* LAST NAME */}
           <Form.Group as={Col}>
             <Form.Control
               type="text"
@@ -88,8 +89,8 @@ const PickUp = ({ handleBought, cartLength }) => {
             />
           </Form.Group>
         </Form.Row>
-
         <Form.Row>
+          {/* MOBILE NUMBER */}
           <Form.Group as={Col}>
             <Form.Control
               type="text"
@@ -99,6 +100,7 @@ const PickUp = ({ handleBought, cartLength }) => {
               onChange={(e) => setMobileNumber(e.target.value)}
             />
           </Form.Group>
+          {/* EMAIL */}
           <Form.Group as={Col}>
             <Form.Control
               type="email"
@@ -108,8 +110,8 @@ const PickUp = ({ handleBought, cartLength }) => {
             />
           </Form.Group>
         </Form.Row>
-
         <Form.Row>
+          {/* CITY */}
           <Form.Group as={Col}>
             <h5>Where do you like to pickup your order?</h5>
             <Form.Control
@@ -132,9 +134,9 @@ const PickUp = ({ handleBought, cartLength }) => {
             </Form.Control>
           </Form.Group>
         </Form.Row>
-
         <h5 className="details-padding-top">Select Date and Time</h5>
         <Form.Row>
+          {/* DATE */}
           <Form.Group as={Col}>
             <Form.Control
               as="select"
@@ -151,6 +153,7 @@ const PickUp = ({ handleBought, cartLength }) => {
               <option>Friday</option>
             </Form.Control>
           </Form.Group>
+          {/* TIME */}
           <Form.Group as={Col}>
             <Form.Control
               as="select"
@@ -170,9 +173,9 @@ const PickUp = ({ handleBought, cartLength }) => {
             </Form.Control>
           </Form.Group>
         </Form.Row>
-
         <h5 className="details-padding-top">Add a note to your order</h5>
         <Form.Row>
+          {/* NOTE */}
           <Form.Group as={Col}>
             <Form.Control
               as="textarea"
@@ -182,7 +185,7 @@ const PickUp = ({ handleBought, cartLength }) => {
             />
           </Form.Group>
         </Form.Row>
-
+        {/* DISABLE BUTTON WHEN EMPTY CART */}
         {!cartLength && (
           <div>
             <Button variant="primary" type="submit" block disabled>
@@ -190,13 +193,13 @@ const PickUp = ({ handleBought, cartLength }) => {
             </Button>
           </div>
         )}
-
+        {/* ENABLE BUTTON WHEN THERE ARE ITEMS */}
         {!isPending && cartLength !== 0 && (
           <Button variant="primary" type="submit" onClick={handleShow} block>
             CHECKOUT
           </Button>
         )}
-
+        {/* DISABLE WHEN PROCESSING */}
         {isPending && cartLength && (
           <div>
             <Button variant="primary" type="submit" block disabled>

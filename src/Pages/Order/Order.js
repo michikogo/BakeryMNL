@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import "./index.css";
 import { Container, Button, Row, Col, Spinner } from "react-bootstrap";
+
 import Deliver from "./Components/Deliver";
 import PickUp from "./Components/PickUp";
 import CartList from "./Components/CartList";
@@ -16,17 +17,10 @@ const Order = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState(true);
 
-  const modePickUp = () => {
-    setIsPickUp(true);
-    setIsDeliver(false);
-  };
-
-  const modeDeliver = () => {
-    setIsPickUp(false);
-    setIsDeliver(true);
-  };
-
   useEffect(() => {
+    // Scroll to top
+    window.scrollTo(0, 0);
+    // Fetch cart DB
     fetch("http://localhost:8000/cart")
       .then((res) => {
         if (!res.ok) {
@@ -48,6 +42,18 @@ const Order = () => {
       });
   }, []);
 
+  // Enable Pickup Button and Disable Deliver Button
+  const modePickUp = () => {
+    setIsPickUp(true);
+    setIsDeliver(false);
+  };
+  // Enable Deliver Button and Disable Pickup Button
+  const modeDeliver = () => {
+    setIsPickUp(false);
+    setIsDeliver(true);
+  };
+
+  // When bought delete all items in the cart
   const handleBought = () => {
     if (cart.length !== 0) {
       cart.forEach((itemCart) => {
@@ -70,10 +76,8 @@ const Order = () => {
           <Link to="/bakery">Continue Shopping</Link>
         </Col>
       </Row>
-
-      {errorMessage && <h6 className="order-fetching">{errorMessage}</h6>}
-
       {/* TABLE */}
+      {errorMessage && <h6 className="order-fetching">{errorMessage}</h6>}
       {isLoading && (
         <h6 className="order-fetching">
           <Spinner animation="border" role="status" />
@@ -84,7 +88,6 @@ const Order = () => {
           <CartList cart={cart} />
         </Row>
       )}
-
       {/* PICKUP OR DELIVERY */}
       <Row style={{ placeContent: "center" }}>
         <Col className="order-col">
@@ -130,7 +133,6 @@ const Order = () => {
           </Button>
         </Col>
       </Row>
-
       {/* SHOW CONTENT OF PICKUP OR DELIVERY */}
       <Row>
         <Col className="order-content">

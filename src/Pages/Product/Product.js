@@ -22,6 +22,10 @@ const Product = () => {
   const [buyNow, setBuyNow] = useState(true);
 
   useEffect(() => {
+    // Scroll to top
+    window.scrollTo(0, 0);
+
+    // Get specific product DB
     fetch("http://localhost:8000/products/" + id)
       .then((res) => {
         return res.json();
@@ -29,7 +33,7 @@ const Product = () => {
       .then((data) => {
         setItem(data);
       });
-
+    // Get cart DB
     fetch("http://localhost:8000/cart")
       .then((res) => {
         return res.json();
@@ -39,7 +43,9 @@ const Product = () => {
       });
   }, []);
 
+  // Update or add item in DB, if more than 5 alert
   const handleDB = (imageURL, title, price, quantity) => {
+    // Get item that is going to be updated
     let singleThing;
     cartItem
       .filter((thing) => thing.imageURL === imageURL)
@@ -47,11 +53,13 @@ const Product = () => {
         singleThing = filteredThing;
       });
 
+    // Check if there is an item to be updated
     if (singleThing != null) {
       console.log("Is in Cart");
       console.log(singleThing);
-
+      // Compute the total of going to buy and the one in cart
       let sum = Number(singleThing.quantity) + Number(quantity);
+      // If over than 5 then cant allow
       if (sum > 5) {
         alert(
           "Sorry we cannot give you " +
@@ -62,21 +70,24 @@ const Product = () => {
             singleThing.title
         );
         return true;
-      } else {
+      }
+      // If not over then add in cart
+      else {
+        // Update the item in the DB
         const data = { imageURL, title, price, quantity: sum };
-
         fetch("http://localhost:8000/cart/" + singleThing.id, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),
         });
       }
-    } else {
+    }
+    // Not in cart then Add to cart DB
+    else {
       console.log("Not Added In Cart Yet");
-
+      // Place on the cart DB
       const data = { imageURL, title, price, quantity };
-      console.log(data);
-
+      // console.log(data);
       fetch("http://localhost:8000/cart", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -104,10 +115,13 @@ const Product = () => {
       let overSum = handleDB(imageURL, title, price, quantity);
       setBuyNow(true);
       console.log(overSum);
+      // If more than 5 then no redirect
       if (overSum) {
         console.log("Too Much Orders");
         setQuantity(0);
-      } else {
+      }
+      // Less than 5 redirect to orders page
+      else {
         console.log("Redirecting to Orders");
         history.push("/order");
       }

@@ -10,6 +10,9 @@ const Bakery = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    // Scroll to top
+    window.scrollTo(0, 0);
+    // Fetch items in products DB
     fetch("http://localhost:8000/products")
       .then((res) => {
         if (!res.ok) {
@@ -39,11 +42,12 @@ const Bakery = () => {
           <Spinner animation="border" role="status" />
         </h6>
       )}
-      {/* Content */}
+      {/* CONTENT */}
       <CardDeck className="bakery-deck">
         {products &&
           products.map((product) => (
             <Card key={product.id} className="bakery-card">
+              {/* IMAGE */}
               <Link to={`/bakery/${product.id}`}>
                 <Card.Img
                   variant="top"
@@ -51,7 +55,7 @@ const Bakery = () => {
                   className="bakery-card-image"
                 />
               </Link>
-
+              {/* TITLE */}
               <Card.Body>
                 <Link
                   className="bakery-card-title"
@@ -60,6 +64,7 @@ const Bakery = () => {
                   <Card.Title>{product.title}</Card.Title>
                 </Link>
               </Card.Body>
+              {/* PRICE */}
               <Card.Footer>
                 <Link
                   className="bakery-card-price"
@@ -68,6 +73,7 @@ const Bakery = () => {
                   Price: ₱{product.price}
                 </Link>
               </Card.Footer>
+              {/* LINK */}
               <Card.Footer>
                 <Link
                   className="bakery-card-order"
