@@ -96,7 +96,12 @@ const Deliver = ({ handleBought, cartLength }) => {
               placeholder="Mobile Number"
               // require
               value={mobileNumber}
-              onChange={(e) => setMobileNumber(e.target.value)}
+              onChange={(e) => {
+                const re = /^[0-9\b]+$/;
+                if (e.target.value === "" || re.test(e.target.value)) {
+                  setMobileNumber(e.target.value);
+                }
+              }}
             />
           </Form.Group>
           {/* EMAIL */}
