@@ -13,9 +13,12 @@ const Home = () => {
       <h3>Tasks:</h3>
       <ul>
         <li>home, about, Not Found page - make design</li>
-        <li>order page - phone numbser should be numbers only</li>
+        <li style={{ textDecoration: "line-through" }}>
+          order page - phone number should be numbers only
+        </li>
         <li>Create a Read Me</li>
         <li>research about deployment</li>
+        <li style={{ textDecoration: "line-through" }}>Tab Image Change</li>
         <li style={{ textDecoration: "line-through" }}>Tab Title Change</li>
         <li style={{ textDecoration: "line-through" }}>
           Redirect go to top of the page
