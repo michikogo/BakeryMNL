@@ -61,6 +61,7 @@ const Product = () => {
             " " +
             singleThing.title
         );
+        return true;
       } else {
         const data = { imageURL, title, price, quantity: sum };
 
@@ -82,13 +83,14 @@ const Product = () => {
         body: JSON.stringify(data),
       });
     }
+    return false;
   };
 
   // Simulating Adding
   const handleOrder = (imageURL, title, price, quantity) => {
     setOrder(false);
     setTimeout(() => {
-      handleDB(imageURL, title, price, quantity);
+      let overSum = handleDB(imageURL, title, price, quantity);
       console.log("Add to Cart");
       setQuantity(0);
       setOrder(true);
@@ -99,10 +101,16 @@ const Product = () => {
   const handleBuyNow = (imageURL, title, price, quantity) => {
     setBuyNow(false);
     setTimeout(() => {
-      handleDB(imageURL, title, price, quantity);
-      console.log("Redirecting to Orders");
+      let overSum = handleDB(imageURL, title, price, quantity);
       setBuyNow(true);
-      history.push("/order");
+      console.log(overSum);
+      if (overSum) {
+        console.log("Too Much Orders");
+        setQuantity(0);
+      } else {
+        console.log("Redirecting to Orders");
+        history.push("/order");
+      }
     }, 1000);
   };
 
