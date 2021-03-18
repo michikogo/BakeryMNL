@@ -12,7 +12,7 @@ const Home = () => {
       <h1>Home Page</h1>
       <h3>Tasks:</h3>
       <ul>
-        <li>Tab Title Change</li>
+        <li style={{ textDecoration: "line-through" }}>Tab Title Change</li>
         <li style={{ textDecoration: "line-through" }}>
           Redirect go to top of the page
         </li>
