@@ -7,7 +7,9 @@ const Home = () => {
       <h3>Tasks:</h3>
       <ul>
         <li>Tab Title Change</li>
-        <li>Redirect go to top of the page</li>
+        <li style={{ textDecoration: "line-through" }}>
+          Redirect go to top of the page
+        </li>
         <li>home and about page - make design</li>
         <li>order page - add remove button for items</li>
         <li>order page - phone numbser should be numbers only</li>
