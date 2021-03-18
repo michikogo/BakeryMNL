@@ -12,13 +12,17 @@ const Home = () => {
       <h1>Home Page</h1>
       <h3>Tasks:</h3>
       <ul>
+        <li>home, about, Not Found page - make design</li>
+        <li>order page - phone numbser should be numbers only</li>
+        <li>Create a Read Me</li>
+        <li>research about deployment</li>
         <li style={{ textDecoration: "line-through" }}>Tab Title Change</li>
         <li style={{ textDecoration: "line-through" }}>
           Redirect go to top of the page
         </li>
-        <li>home and about page - make design</li>
-        <li>order page - add remove button for items</li>
-        <li>order page - phone numbser should be numbers only</li>
+        <li style={{ textDecoration: "line-through" }}>
+          order page - add remove button for items
+        </li>
         <li style={{ textDecoration: "line-through" }}>
           product - button cant be clicked if the user hasnt place quantity
         </li>
