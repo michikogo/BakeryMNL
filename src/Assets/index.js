@@ -14,6 +14,9 @@ import unicorn6 from "./Image/006-unicorn.png";
 // Order Page
 import pickup from "./Image/pickup.png";
 import deliver from "./Image/deliver.png";
+
+// Page Not Found
+import baking from "./Image/baking.jpg";
 export {
   // Header Menu
   logo,
@@ -29,4 +32,6 @@ export {
   // Order Page
   pickup,
   deliver,
+  // Page Not Found
+  baking,
 };

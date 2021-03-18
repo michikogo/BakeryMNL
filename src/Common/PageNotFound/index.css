@@ -1,0 +1,8 @@
+.notfound-background {
+  position: absolute;
+  top: 83px;
+  left: 0px;
+  height: 580px;
+  /* width: 400px; */
+  z-index: -1;
+}
