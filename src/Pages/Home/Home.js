@@ -12,7 +12,8 @@ const Home = () => {
       <h1>Home Page</h1>
       <h3>Tasks:</h3>
       <ul>
-        <li>home, about, Not Found page - make design</li>
+        <li>home, Not Found page - make design</li>
+        <li>product page add 3 random items for recomendation</li>
         <li>Create a Read Me</li>
         <li>research about deployment</li>
         <li style={{ textDecoration: "line-through" }}>
