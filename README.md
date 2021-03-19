@@ -29,17 +29,17 @@ There is no working site yet :(
 
 1. Download react in cmd
 
-```bash
-npx create-react-app <fileName>
-```
+   ```bash
+   npx create-react-app <fileName>
+   ```
 
 ### React Deployment
 
 1. Deploying the project type the following in cmd:
 
-```bash
-npm run build
-```
+   ```bash
+   npm run build
+   ```
 
 ## Branches
 
