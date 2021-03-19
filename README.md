@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# BakeryMNL
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created with `React Hooks`, `JSON Server` `react-bootstrap`.
 
-## Available Scripts
+## Working Site
 
-In the project directory, you can run:
+There is no working site yet :(
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Clone the respiratory
+   ```bash
+   https://github.com/michikogo/BakeryMNL.git
+   ```
+2. Install the packages (in cmd)
+   ```bash
+   npm install
+   ```
+3. Run the react server
+   ```bash
+   npm start
+   ```
+4. Run the Json server
+   ```bash
+   npx json-server --watch src/Data/db.json --port 8000
+   ```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Create New React
 
-### `npm test`
+1. Download react in cmd
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npx create-react-app <fileName>
+```
 
-### `npm run build`
+### React Deployment
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Deploying the project type the following in cmd:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm run build
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Branches
 
-### `npm run eject`
+- master - main project code
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Webpages
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| Webpage  |                                                    Description                                                    |             Libraries              |
+| :------: | :---------------------------------------------------------------------------------------------------------------: | :--------------------------------: |
+|   Home   |                            Landing page of the site, shows the food, staff and promos                             |     `react`, `react-bootstrap`     |
+|  About   |                                 Where team, mission, vision and goals are placed                                  |     `react`, `react-bootstrap`     |
+|  Bakery  |                                          Shows all the pastries selling                                           | `react`, `JSON`, `react-bootstrap` |
+| Products | From bakery, redirects to the specific pastry. User can add to cart or buy now with the desired quality (up to 5) | `react`, `JSON`, `react-bootstrap` |
+|  Order   |     Shows the summary of items bought and total price, asks user if pick up or delivery then process payment      | `react`, `JSON`, `react-bootstrap` |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Road Map
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Features that should be added/ for improvement are:
 
-## Learn More
+- [ ] Home Page
+  - [ ] Make Design
+- [x] About Page
+  - [x] Make Design
+- [x] Page Not Found
+  - [x] Make Design
+- [ ] Product Page
+  - [x] Disable buttons until user has added a quantity
+  - [ ] Add 3 random items as recomendation
+- [x] Order Page
+  - [x] Restrict phone number form to numbers only
+  - [x] Create a remove button for specific items in the cart
+  - [x] Create loading symbol when fetching from db
+  - [x] Remove items when bought
+  - [ ] User can change quantity in cart table
+- [x] General
+  - [x] Create Readme
+  - [x] Research about Json deployment
+  - [x] Tab image and tab title
+  - [x] Redirect to top of the page
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Status
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is ongoing, started at March 12, 2021
