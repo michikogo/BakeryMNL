@@ -11,6 +11,7 @@ import {
   Button,
   Form,
 } from "react-bootstrap";
+import RandomProduct from "./Components/RandomProduct";
 
 const Product = () => {
   const { id } = useParams();
@@ -20,7 +21,7 @@ const Product = () => {
   const [order, setOrder] = useState(true);
   const [quantity, setQuantity] = useState(0);
   const [buyNow, setBuyNow] = useState(true);
-
+  const [refresh, setRefresh] = useState(true);
   useEffect(() => {
     // Scroll to top
     window.scrollTo(0, 0);
@@ -253,6 +254,7 @@ const Product = () => {
           </Card.Body>
         </Card>
       )}
+      {/* <RandomProduct /> */}
     </Container>
   );
 };
