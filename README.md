@@ -68,7 +68,7 @@ Features that should be added/ for improvement are:
 - [ ] Product Page
   - [x] Disable buttons until user has added a quantity
   - [ ] Add 3 random items as recomendation
-- [x] Order Page
+- [ ] Order Page
   - [x] Restrict phone number form to numbers only
   - [x] Create a remove button for specific items in the cart
   - [x] Create loading symbol when fetching from db
