@@ -6,13 +6,10 @@ const PageNotFound = () => {
   return (
     <Container>
       <Image alt="baking" src={baking} className="notfound-background" />
-      <Row>
-        <Col>
-          <h1 style={{ textAlign: "center", verticalAlign: "middle" }}>
-            Page Not Found
-          </h1>
-        </Col>
-      </Row>
+
+      <div className="notfound-div">
+        <h1 className="notfound-text">Page Not Found</h1>
+      </div>
     </Container>
   );
 };

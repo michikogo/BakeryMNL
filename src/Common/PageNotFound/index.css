@@ -2,7 +2,20 @@
   position: absolute;
   top: 83px;
   left: 0px;
-  height: 580px;
-  /* width: 400px; */
+  height: 95%;
+  width: 100%;
   z-index: -1;
+}
+.notfound-div {
+  position: absolute;
+  top: 338px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  margin: auto;
+}
+.notfound-text {
+  text-align: center !important;
+  vertical-align: middle !important;
 }
