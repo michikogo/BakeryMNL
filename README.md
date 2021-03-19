@@ -1,6 +1,6 @@
 # BakeryMNL
 
-This project was created with `React Hooks`, `JSON Server` `react-bootstrap`.
+This project was created with `React Hooks`, `JSON Server` and `react-bootstrap`.
 
 ## Working Site
 
