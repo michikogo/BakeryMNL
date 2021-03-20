@@ -1,11 +1,3 @@
-.header-route {
-  color: white !important;
-  padding: 5px 10px !important;
-}
-.header-route:hover {
-  color: #c0bcb5 !important;
-  text-decoration: none;
-}
 /* Mobile Responsive */
 .header-mobile-responsive {
   text-align: end;
@@ -15,6 +7,14 @@
 }
 .header-mobile-margin {
   margin-right: auto !important;
+}
+.header-mobile-route {
+  color: white !important;
+  padding: 5px 10px !important;
+}
+.header-mobile-route:hover {
+  color: #c0bcb5 !important;
+  text-decoration: none;
 }
 @media (min-width: 672px) {
   .header-mobile-responsive {
@@ -32,8 +32,16 @@
   place-content: center;
   align-items: center;
   font-family: "Patrick Hand";
-  font-size: 25px;
+  font-size: 1.7rem;
   color: white;
+}
+.header-desktop-route {
+  color: white !important;
+  padding: 0px 25px !important;
+}
+.header-desktop-route:hover {
+  color: #c0bcb5 !important;
+  text-decoration: none;
 }
 @media (max-width: 672px) {
   .header-desktop-responsive {

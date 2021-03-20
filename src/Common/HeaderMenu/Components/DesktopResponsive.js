@@ -9,13 +9,13 @@ const DesktopResponsive = () => {
       <Nav className="header-desktop-nav">
         {/* HOME */}
         <Nav>
-          <Link to="/" className="header-route">
+          <Link to="/" className="header-desktop-route">
             Home
           </Link>
         </Nav>
         {/* ABOUT */}
         <Nav>
-          <Link to="/about" className="header-route">
+          <Link to="/about" className="header-desktop-route">
             About
           </Link>
         </Nav>
@@ -25,13 +25,13 @@ const DesktopResponsive = () => {
         </Navbar.Brand>
         {/* BAKERY */}
         <Nav>
-          <Link to="/bakery" className="header-route">
+          <Link to="/bakery" className="header-desktop-route">
             Bakery
           </Link>
         </Nav>
         {/* ORDER */}
         <Nav>
-          <Link to="/order" className="header-route">
+          <Link to="/order" className="header-desktop-route">
             Order
           </Link>
         </Nav>
