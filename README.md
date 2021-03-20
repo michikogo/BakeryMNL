@@ -33,17 +33,38 @@ There is no working site yet :(
    npx create-react-app <fileName>
    ```
 
-### React Deployment
+### React with JSON-Server Deployment
 
-1. Deploying the project type the following in cmd:
-
+1. Install gh-pages using cmd:
+   ```bash
+   npm install gh-pages
+   ```
+2. Add "Homepage" property in package.json
+   `http://<github-username>.github.io/<repo-name>`
+3. Add predeploy and deploy on "Scripts"
+   `"predeploy": "npm run build",`
+   `"deploy": "gh-pages -d build"`
+4. Run the following in cmd:
    ```bash
    npm run build
    ```
+   ```bash
+   npm run deploy
+   ```
+5. Check the repos settings, in the ghPages section select gh-pages branch then save.
 
 ## Branches
 
-- master - main project code
+- master
+  - Contains the main code for the project. The json file uses localhost to access the db
+- main
+  - Contains db.json only so that it can be accessed on https://my-json-server.typicode.com/michikogo/BakeryMNL
+- OnlineJSON
+  - Contains the deployed code, uses the my-json-server website to host db.json
+- gh-pages
+  - Byproduct of OnlineJSON
+- localJSON
+  - Duplicate of master that contains local hosting for db.json
 
 ## Webpages
 
@@ -83,4 +104,4 @@ Features that should be added/ for improvement are:
 
 ## Project Status
 
-This project is ongoing, started at March 12, 2021
+This project is done, started at March 12, 2021 until March 21,2021
