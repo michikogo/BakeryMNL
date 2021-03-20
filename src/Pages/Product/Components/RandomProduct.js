@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { CardDeck, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useHistory } from "react-router";
 
 const RandomProduct = ({ refreshPage }) => {
   const [counter, setCounter] = useState(0);

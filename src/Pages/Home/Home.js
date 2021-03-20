@@ -31,13 +31,12 @@ const Home = () => {
       <Row>
         <Col>
           <Carousel fade>
-            {imageData.map((data) => (
-              <Carousel.Item>
+            {imageData.map((data, index) => (
+              <Carousel.Item key={index}>
                 <img
-                  className="d-block w-100"
+                  className="d-block w-100 home-posters"
                   src={data}
                   alt="promo"
-                  className="home-posters"
                 />
               </Carousel.Item>
             ))}

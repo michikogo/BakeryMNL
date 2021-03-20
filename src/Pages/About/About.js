@@ -71,8 +71,8 @@ const About = () => {
       {/* TEAM */}
       <h5 className="about-team-name">The Team</h5>
       <Row>
-        {team.map((data) => (
-          <Col className="about-team-col">
+        {team.map((data, index) => (
+          <Col key={index} className="about-team-col">
             <div>
               <div>
                 <Image

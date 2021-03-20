@@ -11,7 +11,6 @@ import {
   Button,
   Form,
 } from "react-bootstrap";
-import RandomProduct from "./Components/RandomProduct";
 
 const Product = () => {
   const { id } = useParams();
@@ -21,7 +20,7 @@ const Product = () => {
   const [order, setOrder] = useState(true);
   const [quantity, setQuantity] = useState(0);
   const [buyNow, setBuyNow] = useState(true);
-  const [refresh, setRefresh] = useState(true);
+
   useEffect(() => {
     // Scroll to top
     window.scrollTo(0, 0);
@@ -105,7 +104,7 @@ const Product = () => {
   const handleOrder = (imageURL, title, price, quantity) => {
     setOrder(false);
     setTimeout(() => {
-      let overSum = handleDB(imageURL, title, price, quantity);
+      handleDB(imageURL, title, price, quantity);
       console.log("Add to Cart");
       setQuantity(0);
       setOrder(true);

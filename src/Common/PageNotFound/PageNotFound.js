@@ -1,5 +1,5 @@
 import "./index.css";
-import { Col, Container, Image, Row } from "react-bootstrap";
+import { Container, Image } from "react-bootstrap";
 import { baking } from "../../Assets";
 
 const PageNotFound = () => {
