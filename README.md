@@ -1,6 +1,6 @@
 # BakeryMNL
 
-This project was created with `React Hooks`, `JSON Server` and `react-bootstrap`.
+BakeryMNL is an ecommerce site that sells pastries. They offer deliver and pickup services but up to 5 items per product. This project was created with `React Hooks`, `JSON Server` and `react-bootstrap`.
 
 ## Working Site
 
@@ -35,7 +35,8 @@ https://michikogo.github.io/BakeryMNL/
 
 ### React with JSON-Server Deployment
 
-1. Place db.json in main branch so that it can be accessed in https://my-json-server.typicode.com/michikogo/BakeryMNL
+1. Place db.json in main branch so that it can be accessed
+   https://my-json-server.typicode.com/michikogo/BakeryMNL
 2. All the `fetch(<URL>)` change to `fetch(<onlineURL>)`
 3. Install gh-pages using cmd:
    ```bash
@@ -83,20 +84,20 @@ https://michikogo.github.io/BakeryMNL/
 Features that should be added/ for improvement are:
 
 - [x] Home Page
-  - [x] Make Design
+  - [x] Create a slide show
+  - [x] Add 3 pastires as recomendation
 - [x] About Page
-  - [x] Make Design
+  - [x] Show team members
 - [x] Page Not Found
-  - [x] Make Design
-- [ ] Product Page
+  - [x] Show user that wrong page
+- [x] Product Page
   - [x] Disable buttons until user has added a quantity
-  - [ ] Add 3 random items as recomendation
 - [ ] Order Page
   - [x] Restrict phone number form to numbers only
   - [x] Create a remove button for specific items in the cart
   - [x] Create loading symbol when fetching from db
   - [x] Remove items when bought
-  - [ ] User can change quantity in cart table
+  - [ ] User can change quantity in cart table (Will implement on future projects)
 - [x] General
   - [x] Create Readme
   - [x] Research about Json deployment
