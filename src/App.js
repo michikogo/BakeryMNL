@@ -24,19 +24,19 @@ function App() {
         }}
       >
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/BakeryMNL/">
             <Home />
           </Route>
-          <Route path="/about">
+          <Route path="/BakeryMNL/about">
             <About />
           </Route>
-          <Route exact path="/bakery">
+          <Route exact path="/BakeryMNL/bakery">
             <Bakery />
           </Route>
-          <Route path="/order">
+          <Route path="/BakeryMNL/order">
             <Order />
           </Route>
-          <Route path="/bakery/:id">
+          <Route path="/BakeryMNL/bakery/:id">
             <Product />
           </Route>
           <Route path="*">
