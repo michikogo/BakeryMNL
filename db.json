@@ -1,0 +1,204 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "imageURL": "/item1.jpg",
+      "title": "Dark Chocolate Peanut Butter Mini Tarts",
+      "desc": "Dark Chocolate Peanut Butter Mini Tarts with Mixed Berry Jam, Chocolate Crust, and Torched Swiss Meringue Buttercream",
+      "price": "250"
+    },
+    {
+      "id": 2,
+      "imageURL": "/item2.jpg",
+      "title": "Choco Hazelnut Cheesecake",
+      "desc": "Choco Hazelnut Cheesecake",
+      "price": "200"
+    },
+    {
+      "id": 3,
+      "imageURL": "/item3.jpg",
+      "title": "Coconut and Dark Chocolate Tart with Ginger Caramel (Gluten Free)",
+      "desc": "You won't be able to resist this gluten-free, superbly rich coconut and dark chocolate tart with ginger caramel! Perfect for your next dinner party!",
+      "price": "250"
+    },
+    {
+      "id": 4,
+      "imageURL": "/item4.jpg",
+      "title": "Blackberry Chocolate Tart",
+      "desc": "This chocolate tart is not only vegan and gluten free, but this decadet chocolate tart is balanced with tart blackberries!",
+      "price": "350"
+    },
+    {
+      "id": 5,
+      "imageURL": "/item5.jpg",
+      "title": "Chocolate Mousse",
+      "desc": "This creamy, silky, and airy mousse. You can dress it up, as I have done above, and add other pastry components to recreate a petit gateau (a small layered mousse cake) such as the ones you see in the Paris patisseries. Or, you can keep it simple with a spoonful of soft sweetened whipped cream on top. Either way, you will be comforted in knowing that Paris is only a spoonful away.",
+      "price": "350"
+    },
+    {
+      "id": 6,
+      "imageURL": "/item6.jpg",
+      "title": "Triple Chocolate Mousse Balls",
+      "desc": "No matter how you serve chocolate mousse, you can't go wrong. These miniature bites are great for a quick snack or for a small dessert after a good meal.",
+      "price": "150"
+    },
+    {
+      "id": 7,
+      "imageURL": "/item7.jpg",
+      "title": "VANILLA RASPBERRY CAKE",
+      "desc": "Delicious fruit cake. Refreshing and luring from the very first sight of it.",
+      "price": "180"
+    },
+    {
+      "id": 8,
+      "imageURL": "/item8.jpg",
+      "title": "Sponge Kisses",
+      "desc": "Small round discs of delicate sponge cake with jam and fresh cream in the centre and dusting of icing sugar.",
+      "price": "250"
+    },
+    {
+      "id": 9,
+      "imageURL": "/item9.jpg",
+      "title": "Raspberry Buttercream Mille Feuille",
+      "desc": "A twist on a classic French dessert using regular buttercream frosting, raspberry jam and frozen puff pastry. These beautiful pastries are not nearly as difficult to prepare as you might think.",
+      "price": "250"
+    },
+    {
+      "id": 10,
+      "imageURL": "/item10.jpg",
+      "title": "Blueberry Puff Pastry Tarts with Lemon Cream",
+      "desc": "A light and flavorful company worthy dessert that’s easily made ahead and assembled just before serving.",
+      "price": "250"
+    },
+    {
+      "id": 11,
+      "imageURL": "/item11.jpg",
+      "title": "Cream Buns",
+      "desc": "Who remembers these cream buns from their childhood? Serious throwback vibes!",
+      "price": "250"
+    },
+    {
+      "id": 12,
+      "imageURL": "/item12.jpg",
+      "title": "Mini Chocolate Coffee Layer Cheesecakes",
+      "desc": "MOCHA CHEESECAKES 😍🍫☕️ Vanilla layer, choc layer & a choc coffee layer... Hmm what more could you possibly want in a dessert?! 🤤",
+      "price": "250"
+    },
+    {
+      "id": 13,
+      "imageURL": "/item13.jpg",
+      "title": "Oreo Cookies and Cream Cheesecake",
+      "desc": "Enjoy childhood bliss with every Oreo filled cheesecake bite",
+      "price": "250"
+    },
+    {
+      "id": 14,
+      "imageURL": "/item14.jpg",
+      "title": "Raw Vegan Coffee Cupcakes",
+      "desc": "Want a healthy dessert without turning on the oven? These raw vegan coffee cupcakes are just the thing for you! With a crunchy base and a ridiculously creamy filling, they’re chock-full of coffee, and quite possibly one of the prettiest desserts ever.",
+      "price": "250"
+    },
+    {
+      "id": 15,
+      "imageURL": "/item15.jpg",
+      "title": "Chocolate Mosse",
+      "desc": "Chocolate Mosse",
+      "price": "250"
+    },
+    {
+      "id": 16,
+      "imageURL": "/item16.jpg",
+      "title": "Lemon Coconut Mousse",
+      "desc": "A tangy lemon mousse with hints of coconut on a sweet biscuit base",
+      "price": "250"
+    },
+    {
+      "id": 17,
+      "imageURL": "/item17.jpg",
+      "title": "Fingers Vanille Noisette Caramel",
+      "desc": "Fingers Vanille Noisette Caramel",
+      "price": "250"
+    },
+    {
+      "id": 18,
+      "imageURL": "/item18.jpg",
+      "title": "Chocolate Tiramisu",
+      "desc": "If you like regular tiramisu, you’ll love chocolate tiramisu! This twist on the familiar Italian favorite calls for hot chocolate instead of espresso, and adds several layers of chocolate ganache for a deep, rich chocolate taste.      ",
+      "price": "250"
+    },
+    {
+      "id": 19,
+      "imageURL": "/item19.jpg",
+      "title": "Devils Food Cake",
+      "desc": "We use this signature recipe for our sinfully delicious devils food cake layers, sheet cakes and cupcakes.",
+      "price": "250"
+    },
+    {
+      "id": 20,
+      "imageURL": "/item20.jpg",
+      "title": "Strawberry Shortcakes",
+      "desc": "Classic shortbread rounds, all tender crumbles of buttery biscuit are filled with sweetened strawberry slices and a giant mound of thick whipped cream.",
+      "price": "250"
+    },
+    {
+      "id": 21,
+      "imageURL": "/item21.jpg",
+      "title": "S’mores Cupcakes",
+      "desc": " They are Chocolate Cupcakes, filled with Milk Chocolate Ganache, topped with a Milk Chocolate Buttercream, coated in graham cracker crumbs, and topped with Marshmallow Frosting.",
+      "price": "250"
+    }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "imageURL": "/item1.jpg",
+      "title": "Dark Chocolate Peanut Butter Mini Tarts",
+      "price": "250",
+      "quantity": 1
+    },
+    {
+      "id": 2,
+      "imageURL": "/item21.jpg",
+      "title": "S’mores Cupcakes",
+      "price": "250",
+      "quantity": 3
+    }
+  ],
+  "pickup": [
+    {
+      "id": 1,
+      "firstName": "FirstName",
+      "lastName": "",
+      "mobileNumber": "",
+      "email": "@.com",
+      "city": "Manila",
+      "date": "Monday",
+      "time": "11:00",
+      "note": "asda"
+    },
+    {
+      "firstName": "qwe",
+      "lastName": "qwe",
+      "mobileNumber": "123",
+      "email": "",
+      "city": "San Juan",
+      "date": "Tuesday",
+      "time": "12:00",
+      "note": "",
+      "id": 2
+    }
+  ],
+  "delivery": [
+    {
+      "id": 1,
+      "firstName": "FirstName",
+      "lastName": "",
+      "mobileNumber": "",
+      "email": "@.com",
+      "address": "123",
+      "city": "Manila",
+      "zipCode": 110,
+      "note": "asda"
+    }
+  ]
+}
