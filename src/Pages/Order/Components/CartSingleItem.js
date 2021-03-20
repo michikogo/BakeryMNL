@@ -23,6 +23,7 @@ const CartSingleItem = ({ data, computeTotal }) => {
       }
     ).then(() => {
       history.go(0);
+      window.scrollTo(0, 0);
     });
   };
   return (
