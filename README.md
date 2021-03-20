@@ -4,7 +4,7 @@ This project was created with `React Hooks`, `JSON Server` and `react-bootstrap`
 
 ## Working Site
 
-There is no working site yet :(
+https://michikogo.github.io/BakeryMNL/
 
 ## Installation
 
@@ -35,23 +35,25 @@ There is no working site yet :(
 
 ### React with JSON-Server Deployment
 
-1. Install gh-pages using cmd:
+1. Place db.json in main branch so that it can be accessed in https://my-json-server.typicode.com/michikogo/BakeryMNL
+2. All the `fetch(<URL>)` change to `fetch(<onlineURL>)`
+3. Install gh-pages using cmd:
    ```bash
    npm install gh-pages
    ```
-2. Add "Homepage" property in package.json
+4. Add "Homepage" property in package.json
    `http://<github-username>.github.io/<repo-name>`
-3. Add predeploy and deploy on "Scripts"
+5. Add predeploy and deploy on "Scripts"
    `"predeploy": "npm run build",`
    `"deploy": "gh-pages -d build"`
-4. Run the following in cmd:
+6. Run the following in cmd:
    ```bash
    npm run build
    ```
    ```bash
    npm run deploy
    ```
-5. Check the repos settings, in the ghPages section select gh-pages branch then save.
+7. Check the repos settings, in the ghPages section select gh-pages branch then save.
 
 ## Branches
 
