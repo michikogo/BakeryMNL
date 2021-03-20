@@ -1,6 +1,6 @@
 import "./index.css";
 import { useState, useEffect } from "react";
-import { Container, Carousel, CardDeck, Card } from "react-bootstrap";
+import { Container, Carousel, CardDeck, Card, Row, Col } from "react-bootstrap";
 import { promo1, promo2, promo3 } from "../../Assets";
 import { Link } from "react-router-dom";
 
@@ -28,18 +28,23 @@ const Home = () => {
       {/* Header */}
       <h3 className="home-header">Welcome to BakeryMNL!</h3>
       {/* POSTERS */}
-      <Carousel fade>
-        {imageData.map((data) => (
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={data}
-              alt="promo"
-              className="home-posters"
-            />
-          </Carousel.Item>
-        ))}
-      </Carousel>
+      <Row>
+        <Col>
+          <Carousel fade>
+            {imageData.map((data) => (
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={data}
+                  alt="promo"
+                  className="home-posters"
+                />
+              </Carousel.Item>
+            ))}
+          </Carousel>
+        </Col>
+      </Row>
+
       {/* PRODUCTS */}
       <CardDeck className="home-deck" style={{ paddingTop: "30px" }}>
         {items &&

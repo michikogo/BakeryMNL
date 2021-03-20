@@ -3,8 +3,8 @@
   padding-bottom: 20px;
 }
 .home-posters {
-  height: 226px;
-  width: 690px;
+  height: 100%;
+  width: 100%;
   object-fit: cover;
 }
 .home-deck {
@@ -41,11 +41,6 @@
 }
 
 @media (max-width: 370px) {
-  .home-posters {
-    height: auto;
-    width: 242px;
-    object-fit: unset;
-  }
   .home-card {
     min-width: 180px !important;
     max-width: 180px !important;
@@ -61,10 +56,21 @@
     font-size: smaller !important;
   }
 }
-@media (max-width: 767px) and (min-width: 371px) {
-  .home-posters {
-    height: auto;
-    width: 510px;
-    object-fit: unset;
+@media (min-width: 576px) and (max-width: 767px) {
+  .home-card {
+    min-width: 144px !important;
+    max-width: 144px !important;
+  }
+  .home-image {
+    height: 144px !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 990px) {
+  .home-card {
+    min-width: 208px !important;
+    max-width: 208px !important;
+  }
+  .home-image {
+    height: 208px !important;
   }
 }
