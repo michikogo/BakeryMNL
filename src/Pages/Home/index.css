@@ -1,0 +1,32 @@
+.home-deck {
+  place-content: center;
+  text-align: -webkit-center;
+}
+.home-card {
+  min-width: 17.5rem !important;
+  max-width: 17.5rem !important;
+  margin-bottom: 25px !important;
+}
+.home-image {
+  height: 252.4px !important;
+  object-fit: cover !important;
+}
+.home-title {
+  text-align: center;
+  margin-bottom: 45px;
+}
+.home-card-title:hover {
+  color: #ed474a;
+  text-decoration: none;
+}
+.home-card-price {
+  color: #ed474a;
+}
+.home-card-price:hover {
+  color: black;
+  text-decoration: none;
+}
+.home-card-order,
+.home-card-order:hover {
+  color: black;
+}
