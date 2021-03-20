@@ -42,3 +42,38 @@
 .bakery-card-order:hover {
   color: black;
 }
+
+@media (max-width: 370px) {
+  .bakery-card {
+    min-width: 180px !important;
+    max-width: 180px !important;
+    margin-bottom: 25px !important;
+  }
+  .bakery-image {
+    height: 180px !important;
+  }
+  .card-title {
+    font-size: inherit !important;
+  }
+  .card-footer {
+    font-size: smaller !important;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .bakery-card {
+    min-width: 144px !important;
+    max-width: 144px !important;
+  }
+  .bakery-image {
+    height: 144px !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 990px) {
+  .bakery-card {
+    min-width: 208px !important;
+    max-width: 208px !important;
+  }
+  .bakery-image {
+    height: 208px !important;
+  }
+}
