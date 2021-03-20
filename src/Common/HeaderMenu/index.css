@@ -1,9 +1,43 @@
 .header-route {
-  color: white;
-  padding: 0px 20px;
+  color: white !important;
+  padding: 5px 10px !important;
 }
 .header-route:hover {
-  color: #c0bcb5;
-  padding: 0px 20px;
+  color: #c0bcb5 !important;
   text-decoration: none;
+}
+/* Mobile Responsive */
+.header-mobile-responsive {
+  text-align: end;
+  font-family: "Patrick Hand";
+  font-size: 20px;
+  background-color: #4a6c6f;
+}
+.header-mobile-margin {
+  margin-right: auto !important;
+}
+@media (min-width: 672px) {
+  .header-mobile-responsive {
+    content-visibility: hidden;
+    padding: 0px !important;
+  }
+}
+
+/* Desktop Header */
+.header-desktop-responsive {
+  background-color: #4a6c6f;
+}
+.header-desktop-nav {
+  width: 100%;
+  place-content: center;
+  align-items: center;
+  font-family: "Patrick Hand";
+  font-size: 25px;
+  color: white;
+}
+@media (max-width: 672px) {
+  .header-desktop-responsive {
+    content-visibility: hidden;
+    padding: 0px !important;
+  }
 }
