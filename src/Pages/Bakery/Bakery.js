@@ -16,6 +16,7 @@ const Bakery = () => {
     document.title = "BakeryMNL | Bakery";
     // Fetch items in local products DB
     // fetch("http://localhost:8000/products")
+
     // Fetch items in online db
     fetch("https://my-json-server.typicode.com/michikogo/BakeryMNL/products")
       .then((res) => {

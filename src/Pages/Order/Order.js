@@ -62,9 +62,14 @@ const Order = () => {
     if (cart.length !== 0) {
       cart.forEach((itemCart) => {
         console.log(itemCart);
-        fetch("http://localhost:8000/cart/" + itemCart.id, {
-          method: "DELETE",
-        });
+        // fetch("http://localhost:8000/cart/" + itemCart.id, {
+        fetch(
+          "https://my-json-server.typicode.com/michikogo/BakeryMNL/cart/" +
+            itemCart.id,
+          {
+            method: "DELETE",
+          }
+        );
       });
     } else {
       alert("There is no items in the cart");
