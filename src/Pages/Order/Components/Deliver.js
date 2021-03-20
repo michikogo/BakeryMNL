@@ -68,7 +68,7 @@ const Deliver = ({ handleBought, cartLength }) => {
         <h5 className="details-padding-top">Contact Details</h5>
         <Form.Row>
           {/* FIRST NAME */}
-          <Form.Group as={Col}>
+          <Form.Group as={Col} column sm="12" md="6">
             <Form.Control
               type="text"
               placeholder="First Name"
@@ -78,7 +78,7 @@ const Deliver = ({ handleBought, cartLength }) => {
             />
           </Form.Group>
           {/* LAST NAME */}
-          <Form.Group as={Col}>
+          <Form.Group as={Col} column sm="12" md="6">
             <Form.Control
               type="text"
               placeholder="Last Name"
@@ -90,7 +90,7 @@ const Deliver = ({ handleBought, cartLength }) => {
         </Form.Row>
         <Form.Row>
           {/* MOBILE NUMBER */}
-          <Form.Group as={Col}>
+          <Form.Group as={Col} column sm="12" md="6">
             <Form.Control
               type="text"
               placeholder="Mobile Number"
@@ -105,7 +105,7 @@ const Deliver = ({ handleBought, cartLength }) => {
             />
           </Form.Group>
           {/* EMAIL */}
-          <Form.Group as={Col}>
+          <Form.Group as={Col} column sm="12" md="6">
             <Form.Control
               type="email"
               placeholder="Email (Optional)"
