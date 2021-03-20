@@ -46,7 +46,7 @@ const Home = () => {
       </Row>
 
       {/* PRODUCTS */}
-      <CardDeck className="home-deck" style={{ paddingTop: "30px" }}>
+      <CardDeck className="home-deck">
         {items &&
           items.slice(0, 3).map((product) => (
             <Card key={product.id} className="home-card">

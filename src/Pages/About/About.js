@@ -1,15 +1,8 @@
+import "./index.css";
 import { useEffect } from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
-import {
-  item22,
-  item23,
-  unicorn1,
-  unicorn2,
-  unicorn3,
-  unicorn4,
-  unicorn5,
-  unicorn6,
-} from "../../Assets";
+import { item22, item23 } from "../../Assets";
+
 const About = () => {
   useEffect(() => {
     // Scroll to top
@@ -17,14 +10,50 @@ const About = () => {
     // Tab title
     document.title = "BakeryMNL | About";
   });
+
+  const team = [
+    {
+      image: "unicorn1.png",
+      name: "Liam Johnson",
+      position: "Owner",
+    },
+    {
+      image: "unicorn2.png",
+      name: "Olivia Brown",
+      position: "Co-owner",
+    },
+    {
+      image: "unicorn3.png",
+      name: "Emma Smith",
+      position: "Baker",
+    },
+    {
+      image: "unicorn4.png",
+      name: "Ava Miller",
+      position: "Baker",
+    },
+    {
+      image: "unicorn5.png",
+      name: "William Garcia",
+      position: "Staff",
+    },
+    {
+      image: "unicorn6.png",
+      name: "Oliver Jones",
+      position: "Staff",
+    },
+  ];
+
   return (
     <Container>
+      {/* HEADER */}
       <Row>
         <Col>
-          <h3 style={{ textAlign: "center" }}>About Us</h3>
+          <h3 className="about-header">About Us</h3>
         </Col>
       </Row>
-      <Row style={{ paddingTop: "30px" }}>
+      {/* PARAGRAPH1 */}
+      <Row className="about-par1">
         <Col>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
           feugiat, mi vitae elementum vehicula, orci turpis dictum ipsum, at
@@ -39,110 +68,29 @@ const About = () => {
           ac egestas libero. Nulla quis pretium sapien, nec semper nibh.
         </Col>
       </Row>
-      <h5 style={{ paddingTop: "30px", textAlign: "center" }}>The Team</h5>
+      {/* TEAM */}
+      <h5 className="about-team-name">The Team</h5>
       <Row>
-        <Col style={{ paddingTop: "30px", textAlign: "center" }}>
-          <div>
-            <Image
-              src={unicorn1}
-              style={{
-                height: "100px",
-                width: "100px",
-              }}
-            />
-          </div>
-          <div style={{ fontWeight: "bold" }}>Liam Johnson</div>
-          <div style={{ fontStyle: "italic" }}>Owner</div>
-        </Col>
-        <Col style={{ paddingTop: "30px", textAlign: "center" }}>
-          <div>
+        {team.map((data) => (
+          <Col className="about-team-col">
             <div>
-              <Image
-                src={unicorn2}
-                style={{
-                  height: "100px",
-                  width: "100px",
-                }}
-              />
+              <div>
+                <Image
+                  alt="members"
+                  src={require(`../../Assets/Image/${data.image}`).default}
+                  className="about-team-img"
+                />
+              </div>
+              <div className="about-team-name">{data.name}</div>
+              <div className="about-team-position">{data.position}</div>
             </div>
-            <div style={{ fontWeight: "bold" }}>Olivia Brown</div>
-            <div style={{ fontStyle: "italic" }}>Co-owner</div>
-          </div>
-        </Col>
-        <Col style={{ paddingTop: "30px", textAlign: "center" }}>
-          <div>
-            <div>
-              <Image
-                src={unicorn3}
-                style={{
-                  height: "100px",
-                  width: "100px",
-                }}
-              />
-            </div>
-            <div style={{ fontWeight: "bold" }}>Emma Smith</div>
-            <div style={{ fontStyle: "italic" }}>Baker</div>
-          </div>
-        </Col>
-        <Col style={{ paddingTop: "30px", textAlign: "center" }}>
-          <div>
-            <div>
-              <Image
-                src={unicorn4}
-                style={{
-                  height: "100px",
-                  width: "100px",
-                }}
-              />
-            </div>
-            <div style={{ fontWeight: "bold" }}>Ava Miller</div>
-            <div style={{ fontStyle: "italic" }}>Staff</div>
-          </div>
-        </Col>
-        <Col style={{ paddingTop: "30px", textAlign: "center" }}>
-          <div>
-            <div>
-              <Image
-                src={unicorn5}
-                style={{
-                  height: "100px",
-                  width: "100px",
-                }}
-              />
-            </div>
-            <div style={{ fontWeight: "bold" }}>William Garcia</div>
-            <div style={{ fontStyle: "italic" }}>Staff</div>
-          </div>
-        </Col>
-        <Col style={{ paddingTop: "30px", textAlign: "center" }}>
-          <div>
-            <div>
-              <Image
-                src={unicorn6}
-                style={{
-                  height: "100px",
-                  width: "100px",
-                }}
-              />
-            </div>
-            <div style={{ fontWeight: "bold" }}>Oliver Jones</div>
-            <div style={{ fontStyle: "italic" }}>Staff</div>
-          </div>
-        </Col>
+          </Col>
+        ))}
       </Row>
-      <h5 style={{ paddingTop: "30px", textAlign: "center" }}>
-        Vision, Mission and Goal
-      </h5>
-      <Row style={{ paddingTop: "30px" }}>
-        <Col>
-          <Image
-            src={item22}
-            style={{
-              height: "300px",
-              width: "480px",
-              objectFit: "cover",
-            }}
-          />
+      <h5 className="about-section">Vision, Mission and Goal</h5>
+      <Row>
+        <Col xs={3} lg={4}>
+          <Image src={item22} className="about-img" />
         </Col>
         <Col>
           Suspendisse tempor dictum augue, vel congue nisl lacinia sit amet.
@@ -158,10 +106,8 @@ const About = () => {
           vulputate id purus non convallis.
         </Col>
       </Row>
-      <h5 style={{ paddingTop: "30px", textAlign: "center" }}>
-        Ingredients Used
-      </h5>
-      <Row style={{ paddingTop: "30px" }}>
+      <h5 className="about-section">Ingredients Used</h5>
+      <Row>
         <Col>
           Proin iaculis pulvinar ligula, vitae consectetur libero pulvinar vel.
           Etiam accumsan tempor orci, et congue purus elementum sit amet. Duis
@@ -173,16 +119,8 @@ const About = () => {
           venenatis purus sapien, ac ultrices turpis facilisis ut. Donec
           eleifend iaculis fermentum.
         </Col>
-
-        <Col>
-          <Image
-            src={item23}
-            style={{
-              height: "240px",
-              width: "480px",
-              objectFit: "cover",
-            }}
-          />
+        <Col xs={3} lg={4}>
+          <Image src={item23} className="about-img" />
         </Col>
       </Row>
     </Container>
