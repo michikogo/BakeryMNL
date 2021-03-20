@@ -59,8 +59,8 @@ There is no working site yet :(
 
 Features that should be added/ for improvement are:
 
-- [ ] Home Page
-  - [ ] Make Design
+- [x] Home Page
+  - [x] Make Design
 - [x] About Page
   - [x] Make Design
 - [x] Page Not Found
@@ -79,6 +79,7 @@ Features that should be added/ for improvement are:
   - [x] Research about Json deployment
   - [x] Tab image and tab title
   - [x] Redirect to top of the page
+  - [x] Mobile Responsive
 
 ## Project Status
 
