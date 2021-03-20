@@ -31,7 +31,8 @@ const PickUp = ({ handleBought, cartLength }) => {
     };
     // console.log(pickupData);
     setIsPending(true);
-    fetch("http://localhost:8000/pickup", {
+    // fetch("http://localhost:8000/pickup", {
+    fetch("https://my-json-server.typicode.com/michikogo/BakeryMNL/pickup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(pickupData),

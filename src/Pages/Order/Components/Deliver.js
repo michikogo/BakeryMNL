@@ -31,7 +31,8 @@ const Deliver = ({ handleBought, cartLength }) => {
     // Buttion is enabled
     setIsDisabled(true);
     // Place in db
-    fetch("http://localhost:8000/delivery", {
+    // fetch("http://localhost:8000/delivery", {
+    fetch("https://my-json-server.typicode.com/michikogo/BakeryMNL/delivery", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(delivery),

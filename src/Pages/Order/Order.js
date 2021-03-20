@@ -24,7 +24,8 @@ const Order = () => {
     document.title = "BakeryMNL | Order";
 
     // Fetch cart DB
-    fetch("http://localhost:8000/cart")
+    // fetch("http://localhost:8000/cart")
+    fetch("https://my-json-server.typicode.com/michikogo/BakeryMNL/cart")
       .then((res) => {
         if (!res.ok) {
           throw Error("Cannot Be Fetched");

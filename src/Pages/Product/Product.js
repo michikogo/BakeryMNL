@@ -26,7 +26,10 @@ const Product = () => {
     window.scrollTo(0, 0);
 
     // Get specific product DB
-    fetch("http://localhost:8000/products/" + id)
+    // fetch("http://localhost:8000/products/" + id)
+    fetch(
+      "https://my-json-server.typicode.com/michikogo/BakeryMNL/products/" + id
+    )
       .then((res) => {
         return res.json();
       })
@@ -37,7 +40,8 @@ const Product = () => {
       });
 
     // Get cart DB
-    fetch("http://localhost:8000/cart")
+    // fetch("http://localhost:8000/cart")
+    fetch("https://my-json-server.typicode.com/michikogo/BakeryMNL/cart")
       .then((res) => {
         return res.json();
       })
@@ -78,11 +82,16 @@ const Product = () => {
       else {
         // Update the item in the DB
         const data = { imageURL, title, price, quantity: sum };
-        fetch("http://localhost:8000/cart/" + singleThing.id, {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        });
+        // fetch("http://localhost:8000/cart/" + singleThing.id, {
+        fetch(
+          "https://my-json-server.typicode.com/michikogo/BakeryMNL/cart" +
+            singleThing.id,
+          {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+          }
+        );
       }
     }
     // Not in cart then Add to cart DB
@@ -91,7 +100,8 @@ const Product = () => {
       // Place on the cart DB
       const data = { imageURL, title, price, quantity };
       // console.log(data);
-      fetch("http://localhost:8000/cart", {
+      // fetch("http://localhost:8000/cart", {
+      fetch("https://my-json-server.typicode.com/michikogo/BakeryMNL/cart", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

@@ -23,7 +23,8 @@ const Home = () => {
     // Tab title
     document.title = "BakeryMNL | Home";
 
-    fetch("https://localhost:8000/products")
+    // fetch("https://localhost:8000/products")
+    fetch("https://my-json-server.typicode.com/michikogo/BakeryMNL/products")
       .then((res) => {
         if (!res.ok) {
           throw Error("Cannot Fetch Data");
