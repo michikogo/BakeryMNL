@@ -19,6 +19,7 @@ const CartSingleItem = ({ data, computeTotal }) => {
       method: "DELETE",
     }).then(() => {
       history.go(0);
+      window.scrollTo(0, 0);
     });
   };
   return (
