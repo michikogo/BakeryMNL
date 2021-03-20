@@ -25,19 +25,22 @@ const Home = () => {
   const imageData = [promo1, promo2, promo3];
   return (
     <Container>
+      {/* Header */}
+      <h3 className="home-header">Welcome to BakeryMNL!</h3>
+      {/* POSTERS */}
       <Carousel fade>
         {imageData.map((data) => (
           <Carousel.Item>
             <img
               className="d-block w-100"
               src={data}
-              alt="First slide"
-              style={{ height: "226px", weidth: "690px", objectFit: "cover" }}
+              alt="promo"
+              className="home-posters"
             />
           </Carousel.Item>
         ))}
       </Carousel>
-
+      {/* PRODUCTS */}
       <CardDeck className="home-deck" style={{ paddingTop: "30px" }}>
         {items &&
           items.slice(0, 3).map((product) => (
