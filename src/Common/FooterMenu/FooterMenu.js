@@ -29,7 +29,7 @@ const Footer = () => {
         }}
       >
         Note: The server used was my-json-server, which cannot do POST, PUT or
-        DELETE method. Clone localJSON branch to see the DB updating.
+        DELETE method. Clone master or localJSON branch to see the DB updating.
       </div>
     </div>
   );
