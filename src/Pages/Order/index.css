@@ -77,7 +77,13 @@
   font-weight: bold;
   cursor: pointer;
 }
-/*********** PICKUP ***********/
+@media (max-width: 542px) {
+  .order-image {
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+  }
+} /*********** PICKUP ***********/
 .title-padding-bottom {
   padding-bottom: 15px;
   text-align: center;
