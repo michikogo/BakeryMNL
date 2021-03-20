@@ -24,8 +24,7 @@ const Order = () => {
     document.title = "BakeryMNL | Order";
 
     // Fetch cart DB
-    // fetch("http://localhost:8000/cart")
-    fetch("https://my-json-server.typicode.com/michikogo/BakeryMNL/cart")
+    fetch("http://localhost:8000/cart")
       .then((res) => {
         if (!res.ok) {
           throw Error("Cannot Be Fetched");
@@ -62,14 +61,9 @@ const Order = () => {
     if (cart.length !== 0) {
       cart.forEach((itemCart) => {
         console.log(itemCart);
-        // fetch("http://localhost:8000/cart/" + itemCart.id, {
-        fetch(
-          "https://my-json-server.typicode.com/michikogo/BakeryMNL/cart/" +
-            itemCart.id,
-          {
-            method: "DELETE",
-          }
-        );
+        fetch("http://localhost:8000/cart/" + itemCart.id, {
+          method: "DELETE",
+        });
       });
     } else {
       alert("There is no items in the cart");

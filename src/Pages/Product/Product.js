@@ -26,10 +26,7 @@ const Product = () => {
     window.scrollTo(0, 0);
 
     // Get specific product DB
-    // fetch("http://localhost:8000/products/" + id)
-    fetch(
-      "https://my-json-server.typicode.com/michikogo/BakeryMNL/products/" + id
-    )
+    fetch("http://localhost:8000/products/" + id)
       .then((res) => {
         return res.json();
       })
@@ -40,8 +37,7 @@ const Product = () => {
       });
 
     // Get cart DB
-    // fetch("http://localhost:8000/cart")
-    fetch("https://my-json-server.typicode.com/michikogo/BakeryMNL/cart")
+    fetch("http://localhost:8000/cart")
       .then((res) => {
         return res.json();
       })
@@ -82,16 +78,11 @@ const Product = () => {
       else {
         // Update the item in the DB
         const data = { imageURL, title, price, quantity: sum };
-        // fetch("http://localhost:8000/cart/" + singleThing.id, {
-        fetch(
-          "https://my-json-server.typicode.com/michikogo/BakeryMNL/cart/" +
-            singleThing.id,
-          {
-            method: "PUT",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data),
-          }
-        );
+        fetch("http://localhost:8000/cart/" + singleThing.id, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
       }
     }
     // Not in cart then Add to cart DB
@@ -100,8 +91,7 @@ const Product = () => {
       // Place on the cart DB
       const data = { imageURL, title, price, quantity };
       // console.log(data);
-      // fetch("http://localhost:8000/cart", {
-      fetch("https://my-json-server.typicode.com/michikogo/BakeryMNL/cart", {
+      fetch("http://localhost:8000/cart", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -113,32 +103,32 @@ const Product = () => {
   // Simulating Adding
   const handleOrder = (imageURL, title, price, quantity) => {
     setOrder(false);
-    // setTimeout(() => {
-    handleDB(imageURL, title, price, quantity);
-    console.log("Add to Cart");
-    setQuantity(0);
-    setOrder(true);
-    // }, 1000);
+    setTimeout(() => {
+      handleDB(imageURL, title, price, quantity);
+      console.log("Add to Cart");
+      setQuantity(0);
+      setOrder(true);
+    }, 1000);
   };
 
   // Simulating Buy
   const handleBuyNow = (imageURL, title, price, quantity) => {
     setBuyNow(false);
-    // setTimeout(() => {
-    let overSum = handleDB(imageURL, title, price, quantity);
-    setBuyNow(true);
-    console.log(overSum);
-    // If more than 5 then no redirect
-    if (overSum) {
-      console.log("Too Much Orders");
-      setQuantity(0);
-    }
-    // Less than 5 redirect to orders page
-    else {
-      console.log("Redirecting to Orders");
-      history.push("/order");
-    }
-    // }, 1000);
+    setTimeout(() => {
+      let overSum = handleDB(imageURL, title, price, quantity);
+      setBuyNow(true);
+      console.log(overSum);
+      // If more than 5 then no redirect
+      if (overSum) {
+        console.log("Too Much Orders");
+        setQuantity(0);
+      }
+      // Less than 5 redirect to orders page
+      else {
+        console.log("Redirecting to Orders");
+        history.push("/order");
+      }
+    }, 1000);
   };
 
   return (

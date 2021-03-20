@@ -15,13 +15,9 @@ const CartSingleItem = ({ data, computeTotal }) => {
 
   const handleRemove = () => {
     console.log(data);
-    // fetch("http://localhost:8000/cart/" + data.id, {
-    fetch(
-      "https://my-json-server.typicode.com/michikogo/BakeryMNL/cart/" + data.id,
-      {
-        method: "DELETE",
-      }
-    ).then(() => {
+    fetch("http://localhost:8000/cart/" + data.id, {
+      method: "DELETE",
+    }).then(() => {
       history.go(0);
     });
   };

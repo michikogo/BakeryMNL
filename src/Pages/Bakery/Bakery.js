@@ -14,11 +14,8 @@ const Bakery = () => {
     window.scrollTo(0, 0);
     // Tab title
     document.title = "BakeryMNL | Bakery";
-    // Fetch items in local products DB
-    // fetch("http://localhost:8000/products")
-
-    // Fetch items in online db
-    fetch("https://my-json-server.typicode.com/michikogo/BakeryMNL/products")
+    // Fetch items in products DB
+    fetch("http://localhost:8000/products")
       .then((res) => {
         if (!res.ok) {
           throw Error("Cannot Fetch Data");

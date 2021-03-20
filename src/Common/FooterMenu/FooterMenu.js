@@ -20,17 +20,6 @@ const Footer = () => {
       >
         Created by Aoki Young
       </div>
-      <div
-        style={{
-          paddingTop: "15px",
-          // fontFamily: "Patrick Hand",
-          fontStyle: "italic",
-          color: "white",
-        }}
-      >
-        Note: The server used was my-json-server, which cannot do POST, PUT or
-        DELETE method. Clone localJSON branch to see the DB updating.
-      </div>
     </div>
   );
 };

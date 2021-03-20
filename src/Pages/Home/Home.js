@@ -1,21 +1,11 @@
 import "./index.css";
 import { useState, useEffect } from "react";
-import {
-  Container,
-  Carousel,
-  CardDeck,
-  Card,
-  Row,
-  Col,
-  Spinner,
-} from "react-bootstrap";
+import { Container, Carousel, CardDeck, Card, Row, Col } from "react-bootstrap";
 import { promo1, promo2, promo3 } from "../../Assets";
 import { Link } from "react-router-dom";
 
 const Home = () => {
   const [items, setItems] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(null);
 
   useEffect(() => {
     // Scroll to top
@@ -23,22 +13,12 @@ const Home = () => {
     // Tab title
     document.title = "BakeryMNL | Home";
 
-    // fetch("https://localhost:8000/products")
-    fetch("https://my-json-server.typicode.com/michikogo/BakeryMNL/products")
+    fetch("http://localhost:8000/products")
       .then((res) => {
-        if (!res.ok) {
-          throw Error("Cannot Fetch Data");
-        }
         return res.json();
       })
       .then((data) => {
         setItems(data);
-        setIsLoading(false);
-        setIsError(null);
-      })
-      .catch((err) => {
-        setIsLoading(false);
-        setIsError(err.message);
       });
   }, []);
 
@@ -65,13 +45,6 @@ const Home = () => {
       </Row>
 
       {/* PRODUCTS */}
-      <h6 className="home-pastrie-day">Pastrie of the Day:</h6>
-      {isError && <h6 className="home-fetching">{isError}</h6>}
-      {isLoading && (
-        <h6 className="home-fetching">
-          <Spinner animation="border" role="status" />
-        </h6>
-      )}
       <CardDeck className="home-deck">
         {items &&
           items.slice(0, 3).map((product) => (
