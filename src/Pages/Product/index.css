@@ -25,6 +25,7 @@
 .product-button {
   text-align: center;
   padding-top: 20px;
+  align-items: center;
 }
 
 /* RANDOM PRODUCT */
@@ -59,4 +60,15 @@
 .random-product-card-order,
 .random-product-card-order:hover {
   color: black;
+}
+@media (max-width: 577px) {
+  .product-image-col {
+    text-align: center;
+  }
+  .product-image {
+    width: 250px;
+    height: 250px !important;
+    object-fit: cover;
+    padding-bottom: 20px;
+  }
 }

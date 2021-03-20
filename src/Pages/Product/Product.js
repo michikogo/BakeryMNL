@@ -139,13 +139,14 @@ const Product = () => {
           <Card.Body>
             <h5 className="product-title">{item.title}</h5>
             <Row>
-              <Col sm={4}>
+              <Col sm={4} className="product-image-col">
                 {/* IMAGE */}
                 <Image
                   src={require("../../Assets/Image" + item.imageURL).default}
                   alt={item.imageURL}
                   fluid
                   width="300px"
+                  className="product-image"
                 />
               </Col>
               <Col sm={8} className="product-details">
@@ -160,7 +161,7 @@ const Product = () => {
                 <Row className="product-price-quantity">
                   <Col>
                     <Row>
-                      <Col sm={3}>
+                      <Col sm={5} lg={3}>
                         <h6>Price: </h6>
                       </Col>
                       <Col>
@@ -171,10 +172,10 @@ const Product = () => {
                 </Row>
                 {/* QUANTITY */}
                 <Row>
-                  <Col sm={3} style={{ placeSelf: "center" }}>
+                  <Col sm={5} lg={3} style={{ placeSelf: "center" }}>
                     <h6 style={{ marginBottom: "0px" }}>Quantity: </h6>
                   </Col>
-                  <Col sm={2}>
+                  <Col sm={5}>
                     <Form.Control
                       as="select"
                       value={quantity}
