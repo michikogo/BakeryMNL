@@ -7,10 +7,16 @@
   width: 100%;
   object-fit: cover;
 }
+.home-fetching {
+  text-align: center;
+  margin-top: 25px;
+}
+.home-pastrie-day {
+  padding-top: 30px;
+}
 .home-deck {
   place-content: center;
   text-align: -webkit-center;
-  padding-top: 30px;
 }
 .home-card {
   min-width: 17.5rem !important;
