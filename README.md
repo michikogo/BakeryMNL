@@ -4,7 +4,7 @@ BakeryMNL is an ecommerce site that sells pastries. They offer deliver and picku
 
 ## Working Site
 
-https://michikogo.github.io/BakeryMNL/
+https://michikogo.github.io/BakeryMNL/#/
 
 ## Installation
 
@@ -38,12 +38,13 @@ https://michikogo.github.io/BakeryMNL/
 1. Place db.json in main branch so that it can be accessed
    https://my-json-server.typicode.com/michikogo/BakeryMNL
 2. All the `fetch(<URL>)` change to `fetch(<onlineURL>)`
-3. Install gh-pages using cmd:
+3. BrowserRouter will be changed to HashRouter in App.js
+4. Install gh-pages using cmd:
    ```bash
    npm install gh-pages
    ```
 4. Add "Homepage" property in package.json
-   `http://<github-username>.github.io/<repo-name>`
+   `http://<github-username>.github.io/<repo-name>/`
 5. Add predeploy and deploy on "Scripts"
    `"predeploy": "npm run build",`
    `"deploy": "gh-pages -d build"`
