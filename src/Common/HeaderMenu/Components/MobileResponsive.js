@@ -13,19 +13,19 @@ const MobileResponsive = () => {
       <Navbar.Collapse id="basic-navbar-nav">
         {/* HOME */}
         <Nav className="mr-auto">
-          <Nav.Link href="/BakeryMNL/" className="header-mobile-route">
+          <Nav.Link href="/BakeryMNL/#/" className="header-mobile-route">
             Home
           </Nav.Link>
           {/* ABOUT */}
-          <Nav.Link href="/BakeryMNL/about" className="header-mobile-route">
+          <Nav.Link href="/BakeryMNL/#/about" className="header-mobile-route">
             About
           </Nav.Link>
           {/* BAKERY */}
-          <Nav.Link href="/BakeryMNL/bakery" className="header-mobile-route">
+          <Nav.Link href="/BakeryMNL/#/bakery" className="header-mobile-route">
             Bakery
           </Nav.Link>
           {/* ORDER */}
-          <Nav.Link href="/BakeryMNL/order" className="header-mobile-route">
+          <Nav.Link href="/BakeryMNL/#/order" className="header-mobile-route">
             Order
           </Nav.Link>
         </Nav>

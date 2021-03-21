@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 
 import HeaderMenu from "./Common/HeaderMenu/HeaderMenu";
 import FooterMenu from "./Common/FooterMenu/FooterMenu";
@@ -24,19 +24,19 @@ function App() {
         }}
       >
         <Switch>
-          <Route exact path="/BakeryMNL/">
+          <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/BakeryMNL/about">
+          <Route path="/about">
             <About />
           </Route>
-          <Route exact path="/BakeryMNL/bakery">
+          <Route exact path="/bakery">
             <Bakery />
           </Route>
-          <Route path="/BakeryMNL/order">
+          <Route path="/order">
             <Order />
           </Route>
-          <Route path="/BakeryMNL/bakery/:id">
+          <Route path="/bakery/:id">
             <Product />
           </Route>
           <Route path="*">
