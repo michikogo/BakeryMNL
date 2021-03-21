@@ -63,12 +63,10 @@ https://michikogo.github.io/BakeryMNL/#/
   - Contains the main code for the project. The json file uses localhost to access the db
 - main
   - Contains db.json only so that it can be accessed on https://my-json-server.typicode.com/michikogo/BakeryMNL
-- OnlineJSON
+- onlineJSON
   - Contains the deployed code, uses the my-json-server website to host db.json
 - gh-pages
   - Byproduct of OnlineJSON
-- localJSON
-  - Duplicate of master that contains local hosting for db.json
 
 ## Webpages
 
